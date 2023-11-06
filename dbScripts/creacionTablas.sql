@@ -7,9 +7,9 @@ CREATE TABLE `centrodesalud`.`tab_usuarios` (
     `Teléfono` VARCHAR(100) NOT NULL,
     `Correo` VARCHAR(100) NOT NULL,
     `Contraseña` VARCHAR(255) NOT NULL,
-    `TipoSangre` VARCHAR(2) NOT NULL,
-    `Estatura` DOUBLE NOT NULL,
-    `Peso` DOUBLE NOT NULL,
+    `TipoSangre` VARCHAR(2) NULL,
+    `Estatura` DOUBLE NULL,
+    `Peso` DOUBLE NULL,
     PRIMARY KEY (`Cédula`)
 ) ENGINE = InnoDB;
 
@@ -113,3 +113,7 @@ CREATE TABLE `centrodesalud`.`tab_historialmedicousuario` (
     FOREIGN KEY (`CodHistorial`) REFERENCES `tab_historialmedico`(`CodHistorial`) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`Cédula`) REFERENCES `tab_usuarios`(`Cédula`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;
+
+INSERT INTO `tab_roles`(`Descripción`) VALUES ('ROL_CLIENTE'),('ROL_EMPLEADO'),('ROL_ADMIN');
+INSERT INTO `tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6');
+INSERT INTO `tab_rolesusuario`(`CodRol`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454');
