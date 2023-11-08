@@ -49,7 +49,7 @@ $logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
         
         <h2 class="title">BIENVENIDO</h2>
         <p>
-            Descubre todos los beneficios que obtendras en nuestra app.
+            Descubre todos los beneficios que obtendrás en nuestra app.
         </p>
 
         <div class="btn-home">

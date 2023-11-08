@@ -72,7 +72,7 @@ header{
 
 .header {
     height: 60vh !important;
-    background-image: url(../IMG/fondoInicio.jpg);
+    background-image: url(../IMG/Header.jpg);
     background-position: center;
 
     background-size: cover;
@@ -173,15 +173,6 @@ p {
     text-align: center;
  }
 
- .price {
-    background-image: url(../IMG/inicio2.jpg);
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    text-align: center;
-
- }
-
  .contact {
     padding-top: 20px;
     background: #171717;
@@ -273,7 +264,7 @@ p {
 }
 
 .piePagina .grupo1 .redsocial a:hover{
-    color: #03e9f4;
+    color: #117585;
 }
 
 .piePagina .grupo2 {
