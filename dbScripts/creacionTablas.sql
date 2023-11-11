@@ -115,5 +115,5 @@ CREATE TABLE `centrodesalud`.`tab_historialmedicousuario` (
 ) ENGINE = InnoDB;
 
 INSERT INTO `tab_roles`(`Descripción`) VALUES ('ROL_CLIENTE'),('ROL_EMPLEADO'),('ROL_ADMIN');
-INSERT INTO `tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6');
+INSERT INTO `tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'); --Password@123
 INSERT INTO `tab_rolesusuario`(`CodRol`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454');

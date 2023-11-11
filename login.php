@@ -10,6 +10,7 @@ try{
     //Incluir el archivo para realizar la conexion a la base de datos
     require_once "dbCRUD/conexion.php";
     require_once "dbCRUD/datosCRUD.php";
+    require_once "templates/head.php";
 
     $cedula_err = $contrasena_err = '';
 
@@ -64,29 +65,27 @@ try{
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <div>
-        <h2>Inicio de sesión</h2>
-        <p>Ingrese los siguientes datos acorde a su información.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-            <div>
-                <label for="cedula">Cédula usuario:</label>
-                <input type="number" name="cedula" id="cedula" placeholder="Digite su cédula">
+    <body>
+        <div class="contenedor__pagina">
+            <div class="contenedor__form">
+                <img class="form__logo" src="img/logo.png" alt="Logotipo">
+                <h2>Inicio de sesión</h2>
+                <p>Ingrese los siguientes datos acorde a su información.</p>
+                <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                    <div class="usuario__data">
+                        <input type="number" name="cedula" id="cedula">
+                        <span></span>
+                        <label for="cedula">Cédula usuario:</label>
+                    </div>
+                    <div class="usuario__data">
+                        <input type="password" name="contrasena" id="contrasena">
+                        <span></span>
+                        <label for="contrasena">Contraseña:</label>
+                    </div>
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+                <p><a class="usuario__links" href="register.php">Si no tiene una cuenta, registrece.</a></p>
             </div>
-            <div>
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" name="contrasena" id="contrasena" placeholder="Digite su contraseña">
-            </div>
-            <input type="submit" value="Iniciar Sesión">
-        </form>
-        <p><a href="register.php">Si no tiene una cuenta, registrece.</a></p>
-    </div>   
-</body>
+        </div>
+    </body>
 </html>
