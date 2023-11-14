@@ -1,7 +1,9 @@
 <?php
     session_start();
-    // Verificar si el usuario ha iniciado sesión
-    $logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+    if(!isset($_SESSION["logged"]) || !($_SESSION["logged"] === true)){
+        header("location: login.php");
+        exit;
+    }
 
     require_once "templates/head.php";
     require_once "templates/headerNavbar.php";
