@@ -10,5 +10,6 @@
         <a class="navegacion__links" href="citas.php">Citas</a>
         <a class="navegacion__links" href="soporteFeedback.php">Soporte & Feedback</a>
         <a class="navegacion__links" href="chat.php">Chat en Línea</a>
+        <a class="navegacion__links" href="cerrarsesion.php">Cerrar Sesión</a>
         <a class="navegacion__imagenes" href="perfil.php">FOTO</a>
     </nav>
