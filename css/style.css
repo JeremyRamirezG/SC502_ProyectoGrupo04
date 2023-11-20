@@ -370,3 +370,27 @@ table tr td, table tr th{
     display: block;
     border-radius: 50%; 
 }
+.perfil-ul {
+    font-size: 18px;
+    line-height: 1.6;
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+}
+
+.perfil-ul li {
+    margin-bottom: 10px;
+}
+.usuario___links {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #3498db; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    text-decoration: none;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.usuario___links:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
+}
