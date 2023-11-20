@@ -364,3 +364,9 @@ table tr td, table tr th{
     font-weight: bold;
     margin: 10px 10px 10px 10px;
 }
+.navegacion__imagenes img {
+    max-width: 25%;
+    height: auto;
+    display: block;
+    border-radius: 50%; 
+}
