@@ -118,7 +118,7 @@ INSERT INTO `tab_roles`(`Descripción`) VALUES ('ROL_CLIENTE'),('ROL_EMPLEADO'),
 INSERT INTO `tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'); --Password@123
 INSERT INTO `tab_rolesusuario`(`CodRol`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454');
 
-INSERT INTO `tab_citas`(`Fecha`, `Especialidad`, `MétodoReserva`, `Descripción`, `Estado`) VALUES (now(),'Pedicurista','App','Cita para uña encarnada.','Pendiente'),                                                                                              (now(),'Cardiología','App','Cita para electrocardiograma.','Pendiente'),                                                                                                 (now(),'General','App','Cita para revisión anual.','Cancelada');
+INSERT INTO `tab_citas`(`Fecha`, `Especialidad`, `MétodoReserva`, `Descripción`, `Estado`) VALUES (now(),'Pedicurista','App','Cita para uña encarnada.','Pendiente'), (now(),'Cardiología','App','Cita para electrocardiograma.','Pendiente'), (now(),'General','App','Cita para revisión anual.','Cancelada');
 
 INSERT INTO `tab_citasusuario`(`CodCita`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454');
 ALTER TABLE tab_usuarios ADD COLUMN Avatar LONGBLOB;

@@ -70,6 +70,60 @@ h1 span {
 }
 
 /* Declaracion de hoja de estilos para el resto del sistema */
+/* Forms ocultos */
+.page-link {
+    z-index: 0 !important;
+}
+.form__oculto {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8) !important;
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.form__oculto:target {
+	visibility: visible;
+	opacity: 1;
+}
+.wrapper__form__oculto {
+	margin: 70px auto;
+	padding: 20px;
+	background: var(--secundarioOscuro);
+	border-radius: 5px;
+	width: 50%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+.wrapper__form__oculto .content {
+	max-height: 30%;
+	overflow: auto;
+}
+/*form*/
+.contenedor__form__oculto {
+	border-radius: 5px;
+	background-color: var(--secundarioOscuro);
+	padding: 20px 0;
+}
+.contenedor__form__oculto input,
+.contenedor__form__oculto textarea,
+.contenedor__form__oculto select {
+	margin-top: 20px; margin-bottom: 20px;
+    font-size: 1.8rem;;
+}
+.wrapper__form__oculto button {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
 /* Header */
 .header {
     display: flex;
@@ -145,6 +199,7 @@ body {
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     margin: 50px;
+    overflow: auto;
 }
 
 .contenido__pendientesCitas,
@@ -161,28 +216,34 @@ body {
 
 .contenido__historialCitas {
     grid-column: 1 / 3;
+    min-width: 900px;
     grid-row: 1;
 }
 
 .contenido__pendientesCitas {
     grid-column: 3 / 4;
+    min-width: 600px;
     grid-row: 1;
 }
 
 .contenido__bienvenida {
     grid-column: 1 / 4;
+    min-width: 1520px;
     grid-row: 1;
 }
 .contenido__descripcion {
     grid-column: 1 / 3;
+    min-width: 900px;
     grid-row: 2;
 }
 .contenido__contactos {
     grid-column: 3 / 4;
+    min-width: 600px;
     grid-row: 2;
 }
 .contenido__serviciosemergencia {
     grid-column: 1 / 4;
+    min-width: 1520px;
 }
 
 .titulo__animacion {
@@ -334,6 +395,9 @@ input[type="submit"]:hover{
 
 /* Mostrar datos */
 /* Citas */
+table a {
+    color: var(--primario) !important;
+}
 .contenido__tabla {
     font-size: 1.5rem;
     color: var(--secundario);

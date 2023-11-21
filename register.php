@@ -46,11 +46,11 @@ try {
 
         //Confirmar que la validación no detectó ningún error.
         if (empty($cedula_err) && empty($correo_err) && empty($telefono_err) && empty($primerNombre_err) && empty($segundoNombre_err) && empty($apellidoPaterno_err) && empty($apellidoMaterno_err) && empty($contrasena_err) && empty($confirmarContrasena_err)) {
-            if (ingresoDatos('tab_usuarios', $objDatos)) {
+            if (ingresoDatos('tab_usuarios', $objDatos)!='') {
                 $objRole = new stdClass();
                 $objRole->Cedula = $cedula_val;
                 $objRole->CodRol = "1";
-                if (ingresoDatos('tab_rolesusuario', $objRole)) {
+                if (ingresoDatos('tab_rolesusuario', $objRole)!='') {
                     header("Location: login.php");
                 }
             }
@@ -77,22 +77,22 @@ try {
                     <div class="usuario__data">
                         <input type="text" name="primerNombre" id="primerNombre">
                         <span></span>
-                        <label for="primerNombre">Primer nombre usuario:</label>
+                        <label for="primerNombre">Primer nombre:</label>
                     </div>
                     <div class="usuario__data">
                         <input type="text" name="segundoNombre" id="segundoNombre">
                         <span></span>
-                        <label for="segundoNombre">Segundo nombre usuario:</label>
+                        <label for="segundoNombre">Segundo nombre:</label>
                     </div>
                     <div class="usuario__data">
                         <input type="text" name="primerApellido" id="primerApellido">
                         <span></span>
-                        <label for="primerApellido">Primer apellido usuario:</label>
+                        <label for="primerApellido">Primer apellido:</label>
                     </div>
                     <div class="usuario__data">
                         <input type="text" name="segundoApellido" id="segundoApellido">
                         <span></span>
-                        <label for="segundoApellido">Segundo apellido usuario:</label>
+                        <label for="segundoApellido">Segundo apellido:</label>
                     </div>
                     <div class="usuario__data">
                         <input type="email" name="correo" id="correo">

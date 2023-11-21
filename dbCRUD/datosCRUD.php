@@ -5,6 +5,7 @@ use PSpell\Config;
 require_once "conexion.php";
 
 function getDatosArray($sql) {
+    $retorno = array();
     try {
         $oConexion = Conecta();
 
@@ -13,7 +14,6 @@ function getDatosArray($sql) {
             
             if(!$result = mysqli_query($oConexion, $sql)) die(); //cancelamos el programa
 
-            $retorno = array();
 
             while ($row = mysqli_fetch_array($result)) {
                 $retorno[] = $row;
@@ -30,6 +30,7 @@ function getDatosArray($sql) {
 }
 
 function getDatosObject($sql) {
+    $retorno = null;
     try {
         $oConexion = Conecta();
 
@@ -37,8 +38,6 @@ function getDatosObject($sql) {
         if(mysqli_set_charset($oConexion, "utf8")){
             
             if(!$result = mysqli_query($oConexion, $sql)) die(); //cancelamos el programa
-
-            $retorno = null;
 
             while ($row = mysqli_fetch_array($result)) {
                 $retorno = $row;
@@ -80,6 +79,7 @@ function borrarDatos($sql) {
 
 function ingresoDatos($table, $pObject) {
     $retorno = false;
+    $last_id = '';
 
     /* Para declarar los parametros para el query SQL enviamos un objeto y se referencian dependiendo de la tabla a actualizar. Ejemplo:
     $pObject = new stdClass();
@@ -106,6 +106,7 @@ function ingresoDatos($table, $pObject) {
                     $iTipo = $pObject->Tipo;
 
                     if($stmt1->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -118,6 +119,7 @@ function ingresoDatos($table, $pObject) {
                     $iCédula = $pObject->Cedula;
 
                     if($stmt2->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -133,6 +135,7 @@ function ingresoDatos($table, $pObject) {
                     $iEstado = $pObject->Estado;
 
                     if($stmt3->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -145,6 +148,7 @@ function ingresoDatos($table, $pObject) {
                     $iCédula = $pObject->Cedula;
 
                     if($stmt4->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -159,6 +163,7 @@ function ingresoDatos($table, $pObject) {
                     $iCedula = $pObject->Cedula;
 
                     if($stmt5->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -174,6 +179,7 @@ function ingresoDatos($table, $pObject) {
                     $iEstado = $pObject->Estado;
 
                     if($stmt6->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -186,6 +192,7 @@ function ingresoDatos($table, $pObject) {
                     $iCédula = $pObject->Cedula;
 
                     if($stmt7->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -200,6 +207,7 @@ function ingresoDatos($table, $pObject) {
                     $iCalificación = $pObject->Calificacion;
 
                     if($stmt8->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -213,6 +221,7 @@ function ingresoDatos($table, $pObject) {
                     $iTipo = $pObject->Tipo;
 
                     if($stmt9->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -225,6 +234,7 @@ function ingresoDatos($table, $pObject) {
                     $iCédula = $pObject->Cedula;
 
                     if($stmt10->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -236,6 +246,7 @@ function ingresoDatos($table, $pObject) {
                     $iDescripción = $pObject->Descripcion;
 
                     if($stmt11->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -248,6 +259,7 @@ function ingresoDatos($table, $pObject) {
                     $iCédula = $pObject->Cedula;
 
                     if($stmt12->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -269,6 +281,7 @@ function ingresoDatos($table, $pObject) {
                     $iPeso = $pObject->Peso;
 
                     if($stmt13->execute()){
+                        $last_id = $oConexion->insert_id;
                         $retorno = true;
                     }
                     break;
@@ -284,7 +297,7 @@ function ingresoDatos($table, $pObject) {
         Desconecta($oConexion);
     }
 
-    return $retorno;
+    return $last_id;
 }
 
 function actualizarDatos($table, $pObject, $pId) {
