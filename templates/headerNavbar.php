@@ -7,7 +7,7 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
     exit();
 }
 
-// Incluye la conexión a la base de datos y las funciones necesarias
+// Se incluye la conexion de la base de datos
 require_once "dbCRUD/conexion.php";
 require_once "dbCRUD/datosCRUD.php";
 
@@ -31,6 +31,7 @@ echo "<a class='navegacion__links' href='servicios.php'>Servicios</a>";
 echo "<a class='navegacion__links' href='citas.php'>Citas</a>";
 echo "<a class='navegacion__links' href='soporteFeedback.php'>Soporte & Feedback</a>";
 echo "<a class='navegacion__links' href='chat.php'>Chat en Línea</a>";
+echo "<a class='navegacion__links' href='dashboard.php'>Dashboard para Administrador</a>";
 
 if (!empty($resultado[0]['Avatar'])) {
     echo "<a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64," . base64_encode($resultado[0]['Avatar']) . "' alt='Avatar'></a>";
