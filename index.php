@@ -12,7 +12,7 @@
         <!--Bienvenida-->
         <section class="contenido__bienvenida">
             <h1 class="titulo__animacion">BIENVENIDO</h1>
-            <h3>Descubre todos los beneficios que obtendrás en nuestra app.<!--AGREGAR ALGO MAS--></h3>
+            <h3>Descubre todos los beneficios que obtendrás en nuestra app.</h3>
         </section>
         <!--Sobre la empresa-->
         <section class="contenido__descripcion">
@@ -25,7 +25,9 @@
                 <br />
                 <br />
                 <br />
-                <p></p>
+                <p>Somos una empresa que brinda servicios médicos a toda persona que lo necesite.
+                 Aquí podrán registrar sus citas médicas, cancelarlas si lo amerita y llevar control de estas mismas.
+                Queremos ofrecerles la mejor atención en su salud.</p>
                 <br />
                 <p></p>
                 <br />
@@ -43,14 +45,13 @@
                     <h3>Correo Electrónico</h3>
                     <br />
                     <br />
-                    <p>??????</p>
+                    <p>med@salud.co.cr</p>
                 </div>
                 <div class="box2">
                     <br />
                     <h3>Números de Teléfono</h3>
                     <br />
                     <br />
-                    <p>777-1000</p>
                     <p>+506 2299-5800</p>
                     <p>+506 2668-0095</p>
                     <p>Emergencias 9-1-1</p>
