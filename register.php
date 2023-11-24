@@ -21,7 +21,6 @@ try {
         $objDatos->SegundoApellido = $apellidoMaterno_val = recogePost('segundoApellido');
         $objDatos->Contrasena = $contrasena_val = password_hash(recogePost('contrasena'), PASSWORD_DEFAULT);
         $confirmarContrasena_val = recogePost('confirmarContrasena');
-
         //Validación de que los datos estén llenos.
         if (empty($cedula_val) || empty($correo_val) || empty($telefono_val) || empty($primerNombre_val) || empty($segundoNombre_val) || empty($apellidoPaterno_val) || empty($apellidoMaterno_val) || empty($contrasena_val) || empty($confirmarContrasena_val)) {
             $cedula_err = $correo_err = $primerNombre_err = $segundoNombre_err = $apellidoPaterno_err = $apellidoMaterno_err = $contrasena_err = $confirmarContrasena_err = 'Algún dato requerido se encuentra vacío.';
@@ -46,11 +45,17 @@ try {
 
         //Confirmar que la validación no detectó ningún error.
         if (empty($cedula_err) && empty($correo_err) && empty($telefono_err) && empty($primerNombre_err) && empty($segundoNombre_err) && empty($apellidoPaterno_err) && empty($apellidoMaterno_err) && empty($contrasena_err) && empty($confirmarContrasena_err)) {
-            if (ingresoDatos('tab_usuarios', $objDatos)!='') {
+            $defaultProfileImage = "perfilChat.png";
+            $profileImagePath = "IMG/";
+            $defaultImagePath = $profileImagePath . $defaultProfileImage;
+            $imageData = file_get_contents($defaultImagePath);
+            $base64ImageData = base64_encode($imageData);
+            $objDatos->Avatar = $base64ImageData;
+            if (ingresoDatos('tab_usuarios', $objDatos) != '') {
                 $objRole = new stdClass();
                 $objRole->Cedula = $cedula_val;
                 $objRole->CodRol = "1";
-                if (ingresoDatos('tab_rolesusuario', $objRole)!='') {
+                if (ingresoDatos('tab_rolesusuario', $objRole) != '') {
                     header("Location: login.php");
                 }
             }
