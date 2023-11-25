@@ -27,7 +27,7 @@
                 <a href="cerrarsesion.php" class="logout">Cerrar Sesion</a>
             </header>
             <div class="search">
-                <span class="text">Seleccionar un usuario para iniciar el chat</span>
+                <span class="text">Seleccione un usuario</span>
                 <input type="text" placeholder="Ingrese un nombre...">
                 <button><i class="fas fa-search"></i></button>
             </div>
@@ -95,7 +95,7 @@
             </div>
         </section>
     </div>
-    
+    <script src="scripts/chat.js"></script>
     <br />
     <br />
 </body>
