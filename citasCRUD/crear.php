@@ -42,6 +42,8 @@ try{
                 }
             }
         }
+    } else {
+        header("Location: ../citas.php");
     }
 
 } catch(Throwable $th) {
