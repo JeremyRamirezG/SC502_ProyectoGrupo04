@@ -1,0 +1,2 @@
+CodExamen= 2, Motivo= Motivos personales. 
+CodExamen= 1, Motivo= Test. 

@@ -18,20 +18,10 @@
         <section class="contenido__descripcion">
             <div class="texto">
                 <br />
-                <br />
                 <h2>¿Quiénes Somos?</h2>
                 <br />
+                <p>Nos enorgullece ser una empresa dedicada a proporcionar servicios médicos de alta calidad a todas las personas que lo necesiten. Nuestra plataforma le permite registrar sus citas médicas de manera fácil y conveniente, brindándole la flexibilidad de cancelarlas si es necesario. Además, le ofrecemos un completo control y seguimiento de sus citas para garantizar que reciba la mejor atención posible para su salud. Estamos comprometidos en brindarle un servicio excepcional y cuidar de su bienestar. Su salud es nuestra prioridad, y trabajamos arduamente para hacer que su experiencia con nosotros sea lo más cómoda y efectiva posible.</p>
                 <br />
-                <br />
-                <br />
-                <br />
-                <p>Somos una empresa que brinda servicios médicos a toda persona que lo necesite.
-                 Aquí podrán registrar sus citas médicas, cancelarlas si lo amerita y llevar control de estas mismas.
-                Queremos ofrecerles la mejor atención en su salud.</p>
-                <br />
-                <p></p>
-                <br />
-                <p></p>
             </div>
         </section>
         <!--Contactenos-->
@@ -56,14 +46,6 @@
                     <p>+506 2668-0095</p>
                     <p>Emergencias 9-1-1</p>
                 </div>
-            </div>
-        </section>
-        <!--Servicios de emergencia-->
-        <section class="contenido__serviciosemergencia">
-            <br />
-            <h2>Servicios de emergencia</h2>
-            <div class="content-photo">
-            </div>
             </div>
         </section>
     </main>

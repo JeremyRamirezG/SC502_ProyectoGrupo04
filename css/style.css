@@ -207,7 +207,9 @@ body {
 .contenido__contactos,
 .contenido__serviciosemergencia,
 .contenido__otrainfo,
-.contenido__descripcion {
+.contenido__descripcion,
+.contenido__contactosemergencia,
+.contenido__examenes {
     padding: 10px 10px 10px 10px;
     margin: 10px 10px 10px 10px;
     background-color: var(--secundarioOscuro);
@@ -242,9 +244,17 @@ body {
     grid-row: 2;
     text-align: center;
 }
+.contenido__examenes {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+.contenido__contactosemergencia {
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
 .contenido__serviciosemergencia {
     grid-column: 1 / 4;
-    min-width: 1520px;
+    grid-row: 2;
 }
 
 .titulo__animacion {
@@ -800,3 +810,5 @@ table tr td, table tr th{
 .feedback-form input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+/* CHAT MODIFICAR */

@@ -30,7 +30,7 @@ echo "<a class='navegacion__links' href='index.php'>Inicio</a>";
 echo "<a class='navegacion__links' href='servicios.php'>Servicios</a>";
 echo "<a class='navegacion__links' href='citas.php'>Citas</a>";
 echo "<a class='navegacion__links' href='soporteFeedback.php'>Soporte & Feedback</a>";
-echo "<a class='navegacion__links' href='chat.php'>Chat en Línea</a>";
+echo "<a class='navegacion__links' href='chatEnLinea.php'>Chat en Línea</a>";
 echo "<a class='navegacion__links' href='dashboard.php'>Dashboard para Administrador</a>";
 
 if (!empty($resultado[0]['Avatar'])) {

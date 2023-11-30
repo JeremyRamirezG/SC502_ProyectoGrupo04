@@ -153,7 +153,7 @@ function ingresoDatos($table, $pObject) {
                     }
                     break;
                 case "tab_contactoemergencia":
-                    $stmt5 = $oConexion->prepare("insert into tab_contactoemergencia (Nombre, Ubicación, Telefono, Cédula) values (?, ?, ?, ?)");
+                    $stmt5 = $oConexion->prepare("insert into tab_contactoemergencia (Nombre, Ubicacion, Telefono, Cédula) values (?, ?, ?, ?)");
                     $stmt5->bind_param("ssss", $iNombre, $iUbicacion, $iTelefono, $iCedula);
 
                     //set parametros y luego ejecutarl
@@ -350,14 +350,13 @@ function actualizarDatos($table, $pObject, $pId) {
                     }
                     break;
                 case "tab_contactoemergencia":
-                    $stmt5 = $oConexion->prepare("update tab_contactoemergencia set Nombre = ?, Ubicación = ?, Telefono = ?, Cédula = ? where CodContacto = ?");
-                    $stmt5->bind_param("sssss", $iNombre, $iUbicacion, $iTelefono, $iCedula, $iId);
+                    $stmt5 = $oConexion->prepare("update tab_contactoemergencia set Nombre = ?, Ubicación = ?, Telefono = ? where CodContacto = ?");
+                    $stmt5->bind_param("ssss", $iNombre, $iUbicacion, $iTelefono, $iId);
 
                     //set parametros y luego ejecutarl
                     $iNombre = $pObject->Nombre;
                     $iUbicacion = $pObject->Ubicacion;
                     $iTelefono = $pObject->Telefono;
-                    $iCedula = $pObject->Cedula;
                     $iId = $pId;
 
                     if($stmt5->execute()){

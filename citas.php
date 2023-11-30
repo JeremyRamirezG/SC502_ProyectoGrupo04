@@ -12,7 +12,7 @@
 <main class = "contenedor">
     <div class = 'contenido__historialCitas'>
         <div class = 'contenido__encabezado'>
-            <h2>Historia de citas</h2>
+            <h2>Historial de citas</h2>
             <div>
             <a href='#form__crear' class = 'btn__accion'>Crear cita</a>
             <a href='#form__cancelar' class = 'btn__accion'>Cancelar cita</a>
