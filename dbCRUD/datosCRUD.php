@@ -264,8 +264,8 @@ function ingresoDatos($table, $pObject) {
                     }
                     break;
                 case "tab_usuarios":
-                    $stmt13 = $oConexion->prepare("insert into tab_usuarios (Cédula, PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Teléfono, Correo, Contraseña, TipoSangre, Estatura, Peso, Avatar) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                    $stmt13->bind_param("ssssssssssss", $iCédula, $iPrimerNombre, $iSegundoNombre, $iPrimerApellido, $iSegundoApellido, $iTeléfono, $iCorreo, $iContraseña, $iTipoSangre, $iEstatura, $iPeso,$iAvatar);
+                    $stmt13 = $oConexion->prepare("insert into tab_usuarios (Cédula, PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Teléfono, Correo, Contraseña, TipoSangre, Estatura, Peso) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    $stmt13->bind_param("sssssssssss", $iCédula, $iPrimerNombre, $iSegundoNombre, $iPrimerApellido, $iSegundoApellido, $iTeléfono, $iCorreo, $iContraseña, $iTipoSangre, $iEstatura, $iPeso);
 
                     //set parametros y luego ejecutarl
                     $iCédula = $pObject->Cedula;
@@ -279,7 +279,7 @@ function ingresoDatos($table, $pObject) {
                     $iTipoSangre = $pObject->TipoSangre;
                     $iEstatura = $pObject->Estatura;
                     $iPeso = $pObject->Peso;
-                    $iAvatar = $pObject->Avatar;
+                    
 
                     if($stmt13->execute()){
                         $last_id = $oConexion->insert_id;

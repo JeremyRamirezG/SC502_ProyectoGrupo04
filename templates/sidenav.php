@@ -55,8 +55,10 @@ $resultado = getDatosArray($query);
     <a class='navegacion__links' href='dashboard.php'>Dashboard para Administrador</a>
 
     <?php if (!empty($resultado[0]['Avatar'])): ?>
-        <a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64,<?= base64_encode($resultado[0]['Avatar']) ?>' alt='Avatar'></a>
-    <?php endif; ?>
+    <a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64,<?= base64_encode($resultado[0]['Avatar']) ?>' alt='Avatar'></a>
+<?php else: ?>
+    <a class='navegacion__imagenes' href='perfil.php'><img src='IMG/perfilChat.png' alt='Avatar Predeterminado'></a>
+<?php endif; ?>
 </nav>
 
 </body>

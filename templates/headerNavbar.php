@@ -35,6 +35,8 @@ echo "<a class='navegacion__links' href='dashboard.php'>Dashboard para Administr
 
 if (!empty($resultado[0]['Avatar'])) {
     echo "<a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64," . base64_encode($resultado[0]['Avatar']) . "' alt='Avatar'></a>";
+}else{
+    echo "<a class='navegacion__imagenes' href='perfil.php'><img src='IMG/perfilChat.png' alt='Avatar Predeterminado'></a>";
 }
 
 echo "</nav>";

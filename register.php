@@ -45,12 +45,6 @@ try {
 
         //Confirmar que la validación no detectó ningún error.
         if (empty($cedula_err) && empty($correo_err) && empty($telefono_err) && empty($primerNombre_err) && empty($segundoNombre_err) && empty($apellidoPaterno_err) && empty($apellidoMaterno_err) && empty($contrasena_err) && empty($confirmarContrasena_err)) {
-            $defaultProfileImage = "perfilChat.png";
-            $profileImagePath = "IMG/";
-            $defaultImagePath = $profileImagePath . $defaultProfileImage;
-            $imageData = file_get_contents($defaultImagePath);
-            $base64ImageData = base64_encode($imageData);
-            $objDatos->Avatar = $base64ImageData;
             if (ingresoDatos('tab_usuarios', $objDatos) != '') {
                 $objRole = new stdClass();
                 $objRole->Cedula = $cedula_val;
