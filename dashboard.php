@@ -29,7 +29,7 @@
             </div>
 
             <div class="col-md-10">
-                <h5 class="my-3">Dashboard</h5>
+                <h5 class="titulo__animacion">Dashboard</h5>
 
                 <!-- Sección de Perfil -->
                 <div class="row">
@@ -53,6 +53,20 @@
                                 <h5 class="card-title">Gestión de permisos y roles</h5>
                                 <a href="roles.php" class="btn btn-light">
                                     <i class="fa fa-cogs fa-3x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de las citas-->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Registro de Citas</h5>
+                                <a href="citasDashboard.php" class="btn btn-light">
+                                    <i class="fa fa-calendar fa-3x"></i>
                                 </a>
                             </div>
                         </div>
