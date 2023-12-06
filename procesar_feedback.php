@@ -31,6 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Acceso no autorizado.";
 }
 
-header("Location: soporteFeedback.php");
+header('Location: soporteFeedback.php?success=1');
 exit();
 ?>

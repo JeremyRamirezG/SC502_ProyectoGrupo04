@@ -12,6 +12,23 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
 }
 ?>
 
+<<<<<<< HEAD
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<?php
+    if (isset($_GET['success']) && $_GET['success'] == 1) {
+        echo "<p class='success-message'>Feedback enviado</p>";
+    }
+    ?>
+>>>>>>> 7372ac0e7aaf5c94edb2467258787ce581cd4edb
     <h2 class="feedback-form h2">Deja tu Feedback</h2>
     <form class=feedback-form action="procesar_feedback.php" method="POST">
         <label for="titulo">Título:</label><br>

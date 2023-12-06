@@ -706,6 +706,7 @@ table tr td, table tr th{
     background-color: #45a049;
 }
 
+<<<<<<< HEAD
 /* SERVICIOS CARRUSEL */
 #adelante img,
 #atras img {
@@ -925,3 +926,19 @@ table tr td, table tr th{
     padding-top: 5%;padding-bottom: 5%;
     background-image: linear-gradient(to left, transparent, var(--secundarioOscuro));
 }
+=======
+.success-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.no-citas {
+    text-align: center;
+    font-size: 24px;
+}
+
+/* CHAT MODIFICAR */
+>>>>>>> 7372ac0e7aaf5c94edb2467258787ce581cd4edb
