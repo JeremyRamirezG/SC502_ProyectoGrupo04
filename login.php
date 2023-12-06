@@ -84,7 +84,7 @@ try{
                     </div>
                     <input type="submit" value="Iniciar Sesión">
                 </form>
-                <p><a class="usuario__links" href="register.php">Si no tiene una cuenta, registrece.</a></p>
+                <a class="usuario__links" href="register.php">Si no tiene una cuenta, registrece.</a>
             </div>
         </div>
     </body>

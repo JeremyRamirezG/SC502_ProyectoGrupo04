@@ -42,6 +42,7 @@
                 $citasPendientes = array();
 
                 if(!empty($citas)){
+                    echo "<div class='table-responsive'>";
                     echo "<table id = 'tabla__datos' class = 'table table-stripped'>";
                     echo "<thead>";
                     echo "<tr>\n
@@ -79,12 +80,14 @@
                 }
                 echo "</div>";
                 echo "</div>";
+                echo "</div>";
 
                 echo "<div class = 'contenido__pendientesCitas'>\n
                     <div class = 'contenido__encabezado'>\n
                         <h2>Citas pendientes</h2>\n
                     </div>\n
                     <div class = 'contenido__tabla'>";
+                    echo "<div class='table-responsive'>";
 
                 if(!empty($citasPendientes)){
                     echo "<table id = 'tabla__datos__secundaria' class = 'table table-stripped'>";
@@ -109,6 +112,7 @@
                 else{
                     echo "No hay citas pendientes!";
                 }
+                echo "</div>";
             } catch(Throwable $th) {
                 error_log($th, 0);
             }

@@ -1,6 +1,6 @@
 
         <footer class="footer">
-            <div class="footer__obj">
+            <div class="footer__obj" id="footer__logo">
                 <a href="index.php">
                     <img class="footer__logo" src="img/logo.png" alt="Logotipo">
                 </a>

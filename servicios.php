@@ -18,6 +18,7 @@
             </div>
         </div>
         <div class = 'contenido__tabla'>
+        <div class='table-responsive'>
         <?php
             try {
                 include_once "dbCRUD/datosCRUD.php";
@@ -81,6 +82,7 @@
             }
         ?>
         </div>
+        </div>
     </div>
     <div class = "contenido__contactosemergencia" id="contenido__contactosemergencia">
         <div class = 'contenido__encabezado'>
@@ -90,6 +92,7 @@
             </div>
         </div>
         <div class = 'contenido__tabla'>
+        <div class='table-responsive'>
         <?php
             try {
                 $querycon = "SELECT c.CodContacto, c.Nombre, c.Ubicacion, c.Telefono, c.Cédula FROM tab_contactoemergencia c 
@@ -138,14 +141,34 @@
             }
         ?>
         </div>
+        </div>
     </div>
     <div class = "contenido__serviciosemergencia" id="contenido__serviciosemergencia">
         <div class = 'contenido__encabezado'>
             <h2>Servicios de emergencia</h2>
         </div>
-        <div class = 'contenido__tabla'>
+        <div class = 'contenido__carrusel' id= 'carrusel'>
+            <div class= 'atras' id="atras">
+                <img id="atras"src="img/atras.svg" alt="atras" loading="lazy">
+            </div>
 
+            <div class = "imagenes" >
+                <div id="img">
+                    <img class="img"src="img/911.webp" alt="Referencia al 911" style="margin-right: 20px; margin-left: 20px;">
+                </div>
+                <div id="texto" class="texto__servicios">
+                    <h3>Servicio de emergencias 911</h3>
+                    <p>Servicio de emergencias público, en casos de emergencia no dude en marcar.</p>
+                    <a onclick="window.open('tel:911');">Llamar <b id="llamar">911</b></a>
+                </div>
+            </div>
+
+            <div class="adelante" id="adelante">
+                <img id="adelante"src="img/adelante.svg" alt="adelante" loading="lazy">
+            </div>
         </div>
+
+        <div class="puntos" id="puntos"></div>
     </div>
     <div class = "form__oculto" id = "form__cancelarexamen">
         <div class="wrapper__form__oculto">

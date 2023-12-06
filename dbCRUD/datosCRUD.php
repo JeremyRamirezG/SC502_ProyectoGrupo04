@@ -350,7 +350,7 @@ function actualizarDatos($table, $pObject, $pId) {
                     }
                     break;
                 case "tab_contactoemergencia":
-                    $stmt5 = $oConexion->prepare("update tab_contactoemergencia set Nombre = ?, Ubicación = ?, Telefono = ? where CodContacto = ?");
+                    $stmt5 = $oConexion->prepare("update tab_contactoemergencia set Nombre = ?, Ubicacion = ?, Telefono = ? where CodContacto = ?");
                     $stmt5->bind_param("ssss", $iNombre, $iUbicacion, $iTelefono, $iId);
 
                     //set parametros y luego ejecutarl

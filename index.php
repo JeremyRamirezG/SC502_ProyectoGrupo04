@@ -28,19 +28,18 @@
         <section class="contenido__contactos">
             <br />
             <h2>Contáctenos</h2>
+            <br />
             <p> Ofrece sus servicios en Costa Rica</p>
             <div class="box-container">
                 <div class="box2">
                     <br />
                     <h3>Correo Electrónico</h3>
                     <br />
-                    <br />
                     <p>med@salud.co.cr</p>
                 </div>
                 <div class="box2">
                     <br />
                     <h3>Números de Teléfono</h3>
-                    <br />
                     <br />
                     <p>+506 2299-5800</p>
                     <p>+506 2668-0095</p>

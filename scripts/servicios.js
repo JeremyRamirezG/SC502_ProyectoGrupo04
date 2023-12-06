@@ -5,11 +5,36 @@ const form__modificar__contacto = document.querySelector("#form__modificarcontac
 const form__eliminar__contacto = document.querySelector("#form__eliminarcontacto");
 const form__modificar__examen = document.querySelector("#form__modificarexamen");
 const form__eliminar__examen = document.querySelector("#form__eliminarexamen");
+const btn__llamar = document.querySelector("#llamar");
 
 let datos_modificar_contacto = JSON.parse(localStorage.getItem("datos_modificar_contacto"))  || {};
 let cod_eliminar_contacto = localStorage.getItem("cod_eliminar_contacto") || '';
 let datos_modificar_examen = JSON.parse(localStorage.getItem("datos_modificar_examen"))  || {};
 let cod_eliminar_examen = localStorage.getItem("cod_eliminar_examen") || '';
+
+let imagenes = [
+    {
+        "url": "img/911.webp",
+        "nombre": "Servicios de emergencia 911",
+        "descripcion": "Servicio de emergencias público, en casos de emergencia no dude en marcar.",
+        "telefono": "911",
+    },
+    {
+        "url": "img/ambulancia.jpg",
+        "nombre": "Servicio de ambulancia",
+        "descripcion": "Servicio de ambulancia privada para clientes de la clínica, por favor en casos de emergencia solicitarlo.",
+        "telefono":"00000000",
+    },
+]
+
+
+let atras = document.getElementById('atras');
+let adelante = document.getElementById('adelante');
+let imagen = document.getElementById('img');
+let puntos = document.getElementById('puntos');
+let texto = document.getElementById('texto')
+let actual = 0
+posicionCarrusel()
 
 setModificarExamen(datos_modificar_examen);
 setDeleteExamen(cod_eliminar_examen);
@@ -97,4 +122,47 @@ function setDeleteExamen (id) {
     if(id!='') {
         form__eliminar__examen.querySelector("#codigo").value = id;
     }
+}
+
+atras.addEventListener('click', function(){
+    actual -=1
+
+    if (actual == -1){
+        actual = imagenes.length - 1
+    }
+
+    imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`
+    texto.innerHTML = `
+    <h3>${imagenes[actual].nombre}</h3>
+    <p>${imagenes[actual].descripcion}</p>
+    <a onclick="window.open('tel:${imagenes[actual].telefono}');">Llamar <b id="llamar">${imagenes[actual].telefono}</b></a>
+    `
+    posicionCarrusel()
+})  
+adelante.addEventListener('click', function(){
+    actual +=1
+
+    if (actual == imagenes.length){
+        actual = 0
+    }
+
+    imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`
+    texto.innerHTML = `
+    <h3>${imagenes[actual].nombre}</h3>
+    <p>${imagenes[actual].descripcion}</p>
+    <a onclick="window.open('tel:${imagenes[actual].telefono}');">Llamar <b id="llamar">${imagenes[actual].telefono}</b></a>
+    `
+    posicionCarrusel()
+})  
+
+function posicionCarrusel() {
+    puntos.innerHTML = ""
+    for (var i = 0; i <imagenes.length; i++){
+        if(i == actual){
+            puntos.innerHTML += '<p class="bold">.<p>'
+        }
+        else{
+            puntos.innerHTML += '<p>.<p>'
+        }
+    } 
 }

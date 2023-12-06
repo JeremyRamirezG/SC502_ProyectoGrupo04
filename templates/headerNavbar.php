@@ -26,17 +26,23 @@ echo "<img class='header__logo' src='img/logo.png' alt='Logotipo'>";
 echo "</a>";
 echo "</header>";
 echo "<nav class='navegacion'>";
-echo "<a class='navegacion__links' href='index.php'>Inicio</a>";
-echo "<a class='navegacion__links' href='servicios.php'>Servicios</a>";
-echo "<a class='navegacion__links' href='citas.php'>Citas</a>";
-echo "<a class='navegacion__links' href='soporteFeedback.php'>Soporte & Feedback</a>";
-echo "<a class='navegacion__links' href='chatEnLinea.php'>Chat en Línea</a>";
-echo "<a class='navegacion__links' href='dashboard.php'>Dashboard para Administrador</a>";
+echo "<input type='checkbox' id='check'>";
+echo "<label for='check' class='menu__btn'>";
+echo "<img src='IMG/menu.png' alt='Menu'>";
+echo "</label>";
+echo "<ul id='lista__nav'>";
+echo "<li><a class='navegacion__links' href='index.php'>Inicio</a></li>";
+echo "<li><a class='navegacion__links' href='servicios.php'>Servicios</a></li>";
+echo "<li><a class='navegacion__links' href='citas.php'>Citas</a></li>";
+echo "<li><a class='navegacion__links' href='soporteFeedback.php'>Feedback</a></li>";
+echo "<li><a class='navegacion__links' href='chatEnLinea.php'>Chat en Línea</a></li>";
+echo "<li><a class='navegacion__links' href='dashboard.php'>Dashboard Admin</a></li>";
 
 if (!empty($resultado[0]['Avatar'])) {
-    echo "<a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64," . base64_encode($resultado[0]['Avatar']) . "' alt='Avatar'></a>";
+    echo "<li><a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64," . base64_encode($resultado[0]['Avatar']) . "' alt='Avatar'></a></li>";
 }else{
-    echo "<a class='navegacion__imagenes' href='perfil.php'><img src='IMG/perfilChat.png' alt='Avatar Predeterminado'></a>";
+    echo "<li><a class='navegacion__imagenes' href='perfil.php'><img src='IMG/perfilChat.png' alt='Avatar Predeterminado'></a></li>";
 }
+echo "</ul>";
 
 echo "</nav>";

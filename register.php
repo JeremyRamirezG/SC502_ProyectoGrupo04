@@ -116,7 +116,7 @@ try {
                 </div>
                 <input type="submit" value="Registrar">
             </form>
-            <p><a class="usuario__links" href="login.php">Si ya tiene una cuenta, inicie sesión.</a></p>
+            <a class="usuario__links" href="login.php">Si ya tiene una cuenta, inicie sesión.</a>
         </div>
     </div>
 </body>

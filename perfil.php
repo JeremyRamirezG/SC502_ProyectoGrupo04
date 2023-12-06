@@ -26,8 +26,7 @@ $resultado = getDatosArray($query);
 
 // Muestra el perfil del usuario
 echo "<body>";
-echo "<div class='contenedor__pagina'>";
-echo "<div class='contenedor__from'>";
+echo "<div class='contenedor__perfil'>";
 echo "<h2>Bienvenido a tu perfil</h2>";
 echo "<p>Información de tu perfil:</p>";
 if (!empty($resultado)) {
@@ -48,7 +47,6 @@ if (!empty($resultado)) {
 
 echo "<p><a class='usuario___links' href='cerrarsesion.php'>Cerrar Sesión</a></p>"; // Enlace para cerrar sesión
 echo "<p><a class='usuario___links' href='agregarperfil.php'>Agregar más datos</a></p>";
-echo "</div>";
 echo "</div>";
 echo "</body>";
 ?>

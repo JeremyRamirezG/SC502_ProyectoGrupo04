@@ -6,27 +6,14 @@
     }
 
     require_once "templates/head.php";
+    require_once "templates/headerNavbar.php";
 
     $cedula = $_SESSION['id'];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
     <!-- Dashboard -->
     <div class="container-fluid">
         <div class="row">
-            <!-- Barra lateral -->
-            <div class="col-md-2">
-                <?php include("templates/sidenav.php"); ?>
-            </div>
 
             <div class="col-md-10">
                 <h5 class="my-3">Dashboard</h5>
@@ -62,10 +49,6 @@
             </div>
         </div>
     </div> 
-
-</body>
-
-</html>
 <?php
     require_once "templates/footer.php";
 ?>

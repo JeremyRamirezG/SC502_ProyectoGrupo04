@@ -83,15 +83,16 @@ try {
                         <span><?php echo $peso_err; ?></span>
                         <label for="peso">Peso (kg):</label>
                     </div>
-                    <div class="usuario__data">
-                        <input type="file" name="avatar" id="avatar">
+                    <div class="usuario__data__avatar">
+                        <input type="file" name="avatar" id="avatar" onchange="displayFileName()">
                         <span><?php echo $avatar_err; ?></span>
-                        <label for="avatar">Avatar:</label>
+                        <label for="avatar">Subir Avatar</label>
+                        <span id="fileName" style="font-size: large; color: var(--primario); max-width: 20px;"></span>
                     </div>
                 </div>
                 <input type="submit" value="Actualizar Datos">
             </form>
-            <p><a class="usuario__links" href="perfil.php">Volver al perfil</a></p>
+            <a class="usuario__links" href="perfil.php">Volver al perfil</a>
         </div>
     </div>
 </body>
