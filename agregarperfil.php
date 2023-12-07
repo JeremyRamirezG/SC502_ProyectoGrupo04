@@ -7,7 +7,7 @@ try {
         header("Location: login.php");
         exit();
     }
-    
+
     // Incluir el archivo para realizar la conexión a la base de datos
     require_once "dbCRUD/conexion.php";
     require_once "dbCRUD/datosCRUD.php";
@@ -84,8 +84,8 @@ try {
             }
         }
 
-        header("Location: perfil.php");
     }
+    header("location: perfil.php");
 } catch (Throwable $th) {
     error_log($th, 0);
 }

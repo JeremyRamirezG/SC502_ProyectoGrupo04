@@ -46,7 +46,6 @@ try{
                     session_start();
                     $_SESSION["logged"] = true;
                     $_SESSION["id"] = $cedula_val;
-                    header("location: index.php");
                 }
                 else
                 {
@@ -59,6 +58,7 @@ try{
             }
         }
     }
+    header("location: index.php");
 
 } catch(Throwable $th) {
     error_log($th, 0);
