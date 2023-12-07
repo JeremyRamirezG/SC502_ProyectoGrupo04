@@ -11,7 +11,6 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
 }
 
 // Incluye la cabecera y cualquier otro elemento de la interfaz de usuario necesario
-require_once "templates/head.php";
 
 // Incluye el archivo de conexión a la base de datos y las funciones necesarias
 require_once "dbCRUD/conexion.php";
