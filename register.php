@@ -50,7 +50,9 @@ try {
                 $objRole->Cedula = $cedula_val;
                 $objRole->CodRol = "1";
                 if (ingresoDatos('tab_rolesusuario', $objRole) != '') {
-                    header("Location: login.php");
+                    //header("Location: login.php");
+                    echo "<script>window.location.href='login.php';</script>";
+                    exit;
                 }
             }
         }

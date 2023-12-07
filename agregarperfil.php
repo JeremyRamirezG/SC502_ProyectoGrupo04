@@ -82,7 +82,9 @@ try {
                 $resultado = ingresoDatos('tab_alergiasusuario',$objDatosAlergia);
             }
         }
-        header("Location:https://proyecto.jeremys.site/perfil.php");
+        //header("Location:https://proyecto.jeremys.site/perfil.php");
+        echo "<script>window.location.href='target.php';</script>";
+        exit;
 
     }
     //header("location: perfil.php");
