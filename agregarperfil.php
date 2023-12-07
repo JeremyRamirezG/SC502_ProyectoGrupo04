@@ -83,7 +83,7 @@ try {
             }
         }
         //header("Location:https://proyecto.jeremys.site/perfil.php");
-        echo "<script>window.location.href='target.php';</script>";
+        echo "<script>window.location.href='perfil.php';</script>";
         exit;
 
     }
