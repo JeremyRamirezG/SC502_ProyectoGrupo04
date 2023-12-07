@@ -1,8 +1,4 @@
 <?php
-require_once "templates/head.php";
-require_once "templates/headerNavbar.php";
-require_once "templates/validarRol.php";
-
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -11,6 +7,11 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
     header('Location: login.php');
     exit();
 }
+
+require_once "templates/head.php";
+require_once "templates/headerNavbar.php";
+require_once "templates/validarRol.php";
+
 ?>
 
 <main class="contenedor">

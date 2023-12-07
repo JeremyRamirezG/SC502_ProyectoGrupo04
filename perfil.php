@@ -1,8 +1,4 @@
 <?php
-    require_once "templates/head.php";
-    require_once "templates/headerNavbar.php";
-?>
-<?php
 // Verifica si el usuario está autenticado
 if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
     // Si no está autenticado, redirige al inicio de sesión
@@ -13,6 +9,8 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
 // Incluye la cabecera y cualquier otro elemento de la interfaz de usuario necesario
 
 // Incluye el archivo de conexión a la base de datos y las funciones necesarias
+require_once "templates/head.php";
+require_once "templates/headerNavbar.php";
 require_once "dbCRUD/conexion.php";
 require_once "dbCRUD/datosCRUD.php";
 
@@ -75,7 +73,6 @@ if (!empty($resultado)) {
 echo "<p><a class='usuario___links' href='cerrarsesion.php'>Cerrar Sesión</a></p>"; // Enlace para cerrar sesión
 echo "<p><a class='usuario___links' href='agregarperfil.php'>Agregar más datos</a></p>";
 echo "</div>";
-?>
-<?php
-    require_once "templates/footer.php";
+
+require_once "templates/footer.php";
 ?>
