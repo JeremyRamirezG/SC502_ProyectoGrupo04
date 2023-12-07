@@ -1,10 +1,5 @@
 <?php
 try {
-    // Incluir el archivo para realizar la conexión a la base de datos
-    require_once "dbCRUD/conexion.php";
-    require_once "dbCRUD/datosCRUD.php";
-    require_once "templates/head.php";
-
     // Verificar si el usuario está en sesión
     session_start();
     if (!isset($_SESSION['id'])) {
@@ -12,6 +7,11 @@ try {
         header("Location: login.php");
         exit();
     }
+    
+    // Incluir el archivo para realizar la conexión a la base de datos
+    require_once "dbCRUD/conexion.php";
+    require_once "dbCRUD/datosCRUD.php";
+    require_once "templates/head.php";
     
     $oConexion = Conecta();
     $tipoSangre_err = $estatura_err = $peso_err = $avatar_err = '';
