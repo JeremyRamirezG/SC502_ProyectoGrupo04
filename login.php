@@ -1,11 +1,6 @@
 <?php
 try{
     //Primero se inicia la sesión y se valida si ya se ha ingresado.
-    session_start();
-    if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
-        header("location: index.php");
-        exit;
-    }
 
     //Incluir el archivo para realizar la conexion a la base de datos
     require_once "dbCRUD/conexion.php";
@@ -58,6 +53,7 @@ try{
             }
         }
     }
+    session_start();
     if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
         header("location: index.php");
         exit;
