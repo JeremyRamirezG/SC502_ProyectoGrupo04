@@ -34,7 +34,6 @@ WHERE eu.Cédula = $cedula";
 $enfermedades = getDatosArray($queryEnfermedades);
 
 // Muestra el perfil del usuario
-echo "<body>";
 echo "<div class='contenedor__perfil'>";
 echo "<h2>Bienvenido a tu perfil</h2>";
 echo "<p>Información de tu perfil:</p>";
@@ -77,7 +76,6 @@ if (!empty($resultado)) {
 echo "<p><a class='usuario___links' href='cerrarsesion.php'>Cerrar Sesión</a></p>"; // Enlace para cerrar sesión
 echo "<p><a class='usuario___links' href='agregarperfil.php'>Agregar más datos</a></p>";
 echo "</div>";
-echo "</body>";
 ?>
 <?php
     require_once "templates/footer.php";
