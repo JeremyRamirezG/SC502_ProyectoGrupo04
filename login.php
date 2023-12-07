@@ -46,8 +46,6 @@ try{
                     session_start();
                     $_SESSION["logged"] = true;
                     $_SESSION["id"] = $cedula_val;
-                    sleep(5);
-                    header("location: index.php");
                 }
                 else
                 {
@@ -59,6 +57,10 @@ try{
                 $cedula_err = $contrasena_err = 'Error al iniciar sesión.';
             }
         }
+    }
+    if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
+        header("location: index.php");
+        exit;
     }
 
 } catch(Throwable $th) {
