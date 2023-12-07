@@ -46,6 +46,7 @@ try{
                     session_start();
                     $_SESSION["logged"] = true;
                     $_SESSION["id"] = $cedula_val;
+                    header("Location:https://proyecto.jeremys.site/index.php");
                 }
                 else
                 {
