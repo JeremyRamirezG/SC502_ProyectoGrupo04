@@ -1,25 +1,30 @@
 <?php
-// Verifica si el usuario está autenticado
-if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
-    // Si no está autenticado, redirige al inicio de sesión
-    header('Location: login.php');
-    exit();
-}
+    session_start();
+    // Verifica si el usuario está autenticado
+    if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
+        // Si no está autenticado, redirige al inicio de sesión
+        header('Location: login.php');
+        exit();
+    }
 
-// Incluye la cabecera y cualquier otro elemento de la interfaz de usuario necesario
+    // Incluye la cabecera y cualquier otro elemento de la interfaz de usuario necesario
 
-// Incluye el archivo de conexión a la base de datos y las funciones necesarias
-require_once "templates/head.php";
-require_once "templates/headerNavbar.php";
-require_once "dbCRUD/conexion.php";
-require_once "dbCRUD/datosCRUD.php";
+    // Incluye el archivo de conexión a la base de datos y las funciones necesarias
+    require_once "templates/head.php";
+    require_once "templates/headerNavbar.php";
+    require_once "dbCRUD/conexion.php";
+    require_once "dbCRUD/datosCRUD.php";
 
+?>
+<main>
+<?php
 // Obtén la cédula del usuario desde la sesión
 $cedula = $_SESSION['id'];
 
 // Realiza una consulta para obtener el resto de los datos del usuario
 $query = "SELECT * FROM tab_usuarios WHERE Cédula = $cedula";
 $resultado = getDatosArray($query);
+
 $queryAlergias = "SELECT a.Nombre FROM tab_alergias a
 LEFT JOIN tab_alergiasusuario au ON au.CodAlergia = a.CodAlergia
 WHERE au.Cédula = $cedula";
@@ -73,6 +78,8 @@ if (!empty($resultado)) {
 echo "<p><a class='usuario___links' href='cerrarsesion.php'>Cerrar Sesión</a></p>"; // Enlace para cerrar sesión
 echo "<p><a class='usuario___links' href='agregarperfil.php'>Agregar más datos</a></p>";
 echo "</div>";
-
-require_once "templates/footer.php";
+?>
+</main>
+<?php
+    require_once "templates/footer.php";
 ?>

@@ -46,6 +46,7 @@ try{
                     session_start();
                     $_SESSION["logged"] = true;
                     $_SESSION["id"] = $cedula_val;
+                    sleep(5);
                     header("location: index.php");
                 }
                 else
