@@ -85,7 +85,7 @@ try {
         }
 
     }
-    header("location: perfil.php");
+    //header("location: perfil.php");
 } catch (Throwable $th) {
     error_log($th, 0);
 }

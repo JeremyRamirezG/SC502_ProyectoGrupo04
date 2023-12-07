@@ -58,7 +58,7 @@ try{
             }
         }
     }
-    header("location: index.php");
+    //header("location: index.php");
 
 } catch(Throwable $th) {
     error_log($th, 0);
