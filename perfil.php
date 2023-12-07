@@ -4,7 +4,6 @@
     if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
         // Si no está autenticado, redirige al inicio de sesión
         header('Location: login.php');
-        exit();
     }
 
     // Incluye la cabecera y cualquier otro elemento de la interfaz de usuario necesario

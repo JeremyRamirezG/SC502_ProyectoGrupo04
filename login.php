@@ -4,7 +4,6 @@ try{
     session_start();
     if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
         header("location: index.php");
-        exit;
     }
 
     //Incluir el archivo para realizar la conexion a la base de datos

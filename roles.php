@@ -8,7 +8,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
     header('Location: login.php');
-    exit();
 }
 
 require_once "dbCRUD/conexion.php";

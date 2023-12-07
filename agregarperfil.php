@@ -5,7 +5,6 @@ try {
     if (!isset($_SESSION['id'])) {
         // Redirigir o mostrar mensaje de error si el usuario no está en sesión
         header("Location: login.php");
-        exit();
     }
 
     // Incluir el archivo para realizar la conexión a la base de datos

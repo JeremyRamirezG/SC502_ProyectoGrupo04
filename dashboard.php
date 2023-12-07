@@ -2,7 +2,6 @@
     session_start();
     if(!isset($_SESSION["logged"]) || !($_SESSION["logged"] === true)){
         header("location: login.php");
-        exit;
     }
 
     require_once "templates/head.php";
@@ -11,7 +10,6 @@
 
     if(!$_SESSION["rol"]=="Administrador"){
         header("location: index.php");
-        exit;
     }
 
     $cedula = $_SESSION['id'];
