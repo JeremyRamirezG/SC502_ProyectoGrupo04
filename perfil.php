@@ -23,6 +23,15 @@ $cedula = $_SESSION['id'];
 // Realiza una consulta para obtener el resto de los datos del usuario
 $query = "SELECT * FROM tab_usuarios WHERE Cédula = $cedula";
 $resultado = getDatosArray($query);
+$queryAlergias = "SELECT a.Nombre FROM tab_alergias a
+LEFT JOIN tab_alergiasusuario au ON au.CodAlergia = a.CodAlergia
+WHERE au.Cédula = $cedula";
+$alergias = getDatosArray($queryAlergias);
+
+$queryEnfermedades = "SELECT e.Enfermedad FROM tab_historialmedico e
+LEFT JOIN tab_historialmedicousuario eu ON eu.CodHistorial = e.CodHistorial
+WHERE eu.Cédula = $cedula";
+$enfermedades = getDatosArray($queryEnfermedades);
 
 // Muestra el perfil del usuario
 echo "<body>";
@@ -38,6 +47,26 @@ if (!empty($resultado)) {
         echo "<li>Apellidos: " . $usuario['PrimerApellido'] .'  '. $usuario['SegundoApellido']."</li>";
         echo "<li>Teléfono: " . $usuario['Teléfono'] . "</li>";
         echo "<li>Correo: " . $usuario['Correo'] . "</li>";
+        echo "<li>Enfermedades: ";
+        if(!empty($enfermedades)){
+            foreach ($enfermedades as $enfermedad) {
+                echo "<br>".$enfermedad['Enfermedad'];
+            }
+        }
+        else {
+            echo "No hay enfermedades registradas.";
+        }
+        echo "</li>";
+        echo "<li>Alergias: ";
+        if(!empty($alergias)){
+            foreach ($alergias as $alergia) {
+                echo "<br>".$alergia['Nombre'];
+            }
+        }
+        else {
+            echo "No hay alergias registradas.";
+        }
+        echo "</li>";
         echo "</ul>";
     }
 } else {

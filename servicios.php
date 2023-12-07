@@ -28,7 +28,7 @@
                 $roles = getDatosArray($queryRole);
 
                 $queryex = "SELECT e.CodExamen, e.Fecha, e.Tipo, e.Resultado, e.Descripción, e.Estado FROM tab_examenesmedicos e 
-                        LEFT JOIN tab_examenesmedicosusuario eu ON c.CodExamen = eu.CodExamen
+                        LEFT JOIN tab_examenesmedicosusuario eu ON e.CodExamen = eu.CodExamen
                         LEFT JOIN tab_usuarios u ON u.Cédula = eu.Cédula
                         WHERE u.Cédula = $idUsuarioEnSesion";
 

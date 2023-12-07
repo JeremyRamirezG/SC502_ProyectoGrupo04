@@ -19,6 +19,10 @@ try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once "templates/recoge.php";
         $objDatos = new stdClass();
+        $objDatosEnfermedad = new stdClass();
+        $objDatosAlergia = new stdClass();
+        $alergias_arr = [];
+        $enfermedades_arr = [];
         
         // Obtener el ID del usuario en sesión
         $idUsuarioEnSesion = $_SESSION["id"];
@@ -26,6 +30,9 @@ try {
         $objDatos->TipoSangre = $tipoSangre_val = recogePost('tipoSangre');
         $objDatos->Estatura = $estatura_val = recogePost('estatura');
         $objDatos->Peso = $peso_val = recogePost('peso');
+
+        $enfermedades_arr = $_POST['enfermedades'];
+        $alergias_arr  = $_POST['alergias'];
 
         // Validación de los nuevos campos
         if (empty($tipoSangre_val) || empty($estatura_val) || empty($peso_val)) {
@@ -48,12 +55,36 @@ try {
 
             if ($stmt->execute()) {
                 echo "Datos actualizados correctamente.";
-                header("Location: perfil.php");
-                exit();
             } else {
                 echo "Error al actualizar los datos del usuario.";
             }
         }
+
+        if ($enfermedades_arr!=[]){
+            $queryED = "DELETE FROM tab_historialmedicousuario WHERE Cédula=$idUsuarioEnSesion";
+            borrarDatos($queryED);
+
+            foreach($enfermedades_arr as $enfermedad_val){
+                $objDatosEnfermedad->Cedula = $idUsuarioEnSesion;
+                $objDatosEnfermedad->CodHistorial = $enfermedad_val;
+    
+                $resultado = ingresoDatos('tab_historialmedicousuario',$objDatosEnfermedad);
+            }
+        }
+        if ($alergias_arr!=[]){
+            $queryAD = "DELETE FROM tab_alergiasusuario WHERE Cédula=$idUsuarioEnSesion";
+            borrarDatos($queryAD);
+
+            foreach($alergias_arr as $alergia_val){
+    
+                $objDatosAlergia->Cedula = $idUsuarioEnSesion;
+                $objDatosAlergia->CodAlergia = $alergia_val;
+    
+                $resultado = ingresoDatos('tab_alergiasusuario',$objDatosAlergia);
+            }
+        }
+
+        header("Location: perfil.php");
     }
 } catch (Throwable $th) {
     error_log($th, 0);
@@ -89,6 +120,34 @@ try {
                         <label for="avatar">Subir Avatar</label>
                         <span id="fileName" style="font-size: large; color: var(--primario); max-width: 20px;"></span>
                     </div>
+                    <select class="form-control" name="enfermedades[]" id="enfermedades" multiple="multiple" style="font-size: 1.8rem;">
+                        <?php
+                        try {
+                            $queryE = "SELECT CodHistorial, Enfermedad FROM tab_historialmedico";
+                            $enfermedades = getDatosArray($queryE);
+
+                            foreach($enfermedades as $enfermedad){
+                                echo "<option value='{$enfermedad['CodHistorial']}'>{$enfermedad['Enfermedad']}</option>";
+                            }
+                        } catch(Throwable $th) {
+                            error_log($th, 0);
+                        }
+                        ?>
+                    </select>
+                    <select class="form-control" name="alergias[]" id="alergias" multiple="multiple"style="font-size: 1.8rem;">
+                        <?php
+                        try {
+                            $queryA = "SELECT CodAlergia, Nombre FROM tab_alergias";
+                            $alergias = getDatosArray($queryA);
+
+                            foreach($alergias as $alergia){
+                                echo "<option value='{$alergia['CodAlergia']}'>{$alergia['Nombre']}</option>";
+                            }
+                        } catch(Throwable $th) {
+                            error_log($th, 0);
+                        }
+                        ?>
+                    </select>
                 </div>
                 <input type="submit" value="Actualizar Datos">
             </form>

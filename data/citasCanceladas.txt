@@ -1,2 +1,3 @@
 CodCita= 2, Motivo= Motivos personales. 
 CodCita= 10, Motivo= Prueba funcionalidad. 
+CodCita= 12, Motivo= Motivos personales. 

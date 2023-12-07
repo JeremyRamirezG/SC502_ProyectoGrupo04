@@ -2,9 +2,9 @@
 
 function Conecta() {
     try{
-        $server = "localhost";
-        $user = "root";
-        $password = "";
+        $server = "v-jeremyrtests.mysql.database.azure.com";
+        $user = "JeremyR";
+        $password = "Tttt@restt2001"; //Tttt@restt2001
         $dataBase = "centrodesalud";
 
         $conexion = mysqli_connect($server, $user, $password, $dataBase);

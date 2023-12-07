@@ -71,6 +71,11 @@ h1 span {
 
 /* Declaracion de hoja de estilos para el resto del sistema */
 /* Forms ocultos */
+.contenedor__form__oculto label {
+    font-size: large;
+    color: var(--secundario);
+}
+
 .page-link {
     z-index: 0 !important;
 }
@@ -186,6 +191,7 @@ h1 span {
 .navegacion__links:hover,
 .navegacion__links--activo {
     color: var(--secundario);
+    text-decoration: none;
 }
 
 .navegacion ul {
@@ -220,7 +226,7 @@ h1 span {
         position: fixed;
         width: 100%;
         background-color: var(--primarioOscuro);
-        top: 340px;
+        top: 345px;
         text-align: center;
         left: -100%;
         transition: all .5s;
@@ -263,7 +269,10 @@ body {
 .contenido__otrainfo,
 .contenido__descripcion,
 .contenido__contactosemergencia,
-.contenido__examenes {
+.contenido__feedback,
+.contenido__usuarios,
+.contenido__examenes,
+.contenido__admin {
     padding: 10px 10px 10px 10px;
     margin: 10px 10px 10px 10px;
     background-color: var(--secundarioOscuro);
@@ -284,49 +293,6 @@ body {
         overflow: hidden !important;
     }
 }
-
-/*
-.contenido__historialCitas {
-    grid-column: 1 / 3;
-    min-width: 900px;
-    grid-row: 1;
-}
-
-.contenido__pendientesCitas {
-    /*grid-column: 3 / 4;
-    min-width: 600px;
-    grid-row: 1;
-}
-
-.contenido__bienvenida {
-    /*grid-column: 1 / 4;
-    min-width: 1520px;
-    grid-row: 1;
-}
-.contenido__descripcion {
-    /*grid-column: 1 / 3;
-    min-width: 900px;
-    grid-row: 2;
-}
-.contenido__contactos {
-    /*grid-column: 3 / 4;
-    min-width: 600px;
-    grid-row: 2;
-    text-align: center;
-}
-.contenido__examenes {
-    /*grid-column: 1 / 3;
-    grid-row: 1;
-}
-.contenido__contactosemergencia {
-    /*grid-column: 3 / 4;
-    grid-row: 1;
-}
-.contenido__serviciosemergencia {
-    /*grid-column: 1 / 4;
-    grid-row: 2;
-}
-*/
 
 .titulo__animacion {
     animation: opacityOn 5s linear infinite alternate;
@@ -706,7 +672,6 @@ table tr td, table tr th{
     background-color: #45a049;
 }
 
-<<<<<<< HEAD
 /* SERVICIOS CARRUSEL */
 #adelante img,
 #atras img {
@@ -926,19 +891,33 @@ table tr td, table tr th{
     padding-top: 5%;padding-bottom: 5%;
     background-image: linear-gradient(to left, transparent, var(--secundarioOscuro));
 }
-=======
-.success-message {
-    background-color: #dff0d8;
-    color: #3c763d;
-    border: 1px solid #d6e9c6;
-    padding: 15px;
-    margin-top: 20px;
+
+/* Dashboard */
+.contenedor__dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 10px;
+    grid-auto-rows: minmax(300px, auto);
+    margin: 3%;
 }
 
-.no-citas {
-    text-align: center;
-    font-size: 24px;
+@media (min-width: 1500px){
+    .contenido__usuarios {
+        grid-column: span 5;
+    }
 }
-
-/* CHAT MODIFICAR */
->>>>>>> 7372ac0e7aaf5c94edb2467258787ce581cd4edb
+@media (min-width: 1200px) and (max-width: 1500px){
+    .contenido__usuarios {
+        grid-column: span 4;
+    }
+}
+@media (min-width: 900px) and (max-width: 1200px){
+    .contenido__usuarios {
+        grid-column: span 3;
+    }
+}
+@media (min-width: 600px) and (max-width: 900px){
+    .contenido__usuarios {
+        grid-column: span 2;
+    }
+}

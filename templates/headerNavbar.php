@@ -10,6 +10,7 @@ if (!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
 // Se incluye la conexion de la base de datos
 require_once "dbCRUD/conexion.php";
 require_once "dbCRUD/datosCRUD.php";
+require_once "templates/validarRol.php";
 
 // Obtén la cédula del usuario desde la sesión
 $cedula = $_SESSION['id'];
@@ -36,7 +37,9 @@ echo "<li><a class='navegacion__links' href='servicios.php'>Servicios</a></li>";
 echo "<li><a class='navegacion__links' href='citas.php'>Citas</a></li>";
 echo "<li><a class='navegacion__links' href='soporteFeedback.php'>Feedback</a></li>";
 echo "<li><a class='navegacion__links' href='chatEnLinea.php'>Chat en Línea</a></li>";
-echo "<li><a class='navegacion__links' href='dashboard.php'>Dashboard Admin</a></li>";
+if($_SESSION["rol"]=="Administrador"){
+    echo "<li><a class='navegacion__links' href='dashboard.php'>Dashboard Admin</a></li>";
+}
 
 if (!empty($resultado[0]['Avatar'])) {
     echo "<li><a class='navegacion__imagenes' href='perfil.php'><img src='data:image/png;base64," . base64_encode($resultado[0]['Avatar']) . "' alt='Avatar'></a></li>";

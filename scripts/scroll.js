@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // El usuario está haciendo scroll hacia arriba
             miObjeto.style.transform = 'translateY(-100%)';
           }
+      } else {
+        miObjeto.style.transform = 'translateY(0)';
       }
   
       lastScrollTop = scrollTop;

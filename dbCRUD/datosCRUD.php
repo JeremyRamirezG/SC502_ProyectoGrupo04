@@ -197,7 +197,7 @@ function ingresoDatos($table, $pObject) {
                     }
                     break;
                 case "tab_feedback":
-                    $stmt8 = $oConexion->prepare("insert into tab_feedback (Titulo, Area, Descripción, Calificación) values (?, ?, ?, ?)");
+                    $stmt8 = $oConexion->prepare("insert into tab_feedback (Titulo, Area, Descripción, Calificacion) values (?, ?, ?, ?)");
                     $stmt8->bind_param("ssss", $iTitulo, $iArea, $iDescripción, $iCalificación);
 
                     //set parametros y luego ejecutarl

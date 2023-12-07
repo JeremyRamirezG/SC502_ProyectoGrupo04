@@ -1,3 +1,5 @@
+CREATE DATABASE `centrodesalud`;
+
 CREATE TABLE `centrodesalud`.`tab_usuarios` (
     `Cédula` VARCHAR(255) NOT NULL,
     `PrimerNombre` VARCHAR(100) NOT NULL,
@@ -114,14 +116,18 @@ CREATE TABLE `centrodesalud`.`tab_historialmedicousuario` (
     FOREIGN KEY (`Cédula`) REFERENCES `tab_usuarios`(`Cédula`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
-INSERT INTO `tab_roles`(`Descripción`) VALUES ('ROL_CLIENTE'),('ROL_EMPLEADO'),('ROL_ADMIN');
-INSERT INTO `tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'), --Password@123
+ALTER TABLE `centrodesalud`.`tab_usuarios` ADD COLUMN Avatar LONGBLOB;
+
+INSERT INTO `centrodesalud`.`tab_roles`(`Descripción`) VALUES ('ROL_CLIENTE'),('ROL_EMPLEADO'),('ROL_ADMIN');
+INSERT INTO `centrodesalud`.`tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'), #Password@123
                                                                                                                                                       ('118420499','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7248@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'),
-                                                                                                                                                      ('118420410','Kevin','Steve','Ramirez','Gonzalez','87370422','jrg7348@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'),
-                                                                                                                                                      ('118420411','Ariana','','Araya','Gonzalez','87370422','jrg7348@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6');
-INSERT INTO `tab_rolesusuario`(`CodRol`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454'), ('1','118420499'), ('2','118420499'), ('1','118420411'), ('2','118420411'), ('1','118420410'), ('2','118420410');
+                                                                                                                                                      ('118420410','Kevin','Steve','Ramirez','Gonzalez','87370422','krg7348@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'),
+                                                                                                                                                      ('118420411','Ariana','','Araya','Martinez','87370422','arm7348@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6');
+INSERT INTO `centrodesalud`.`tab_rolesusuario`(`CodRol`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454'), ('1','118420499'), ('2','118420499'), ('1','118420411'), ('2','118420411'), ('1','118420410'), ('2','118420410');
 
-INSERT INTO `tab_citas`(`Fecha`, `Especialidad`, `MétodoReserva`, `Descripción`, `Estado`) VALUES (now(),'Pedicurista','App','Cita para uña encarnada.','Pendiente'), (now(),'Cardiología','App','Cita para electrocardiograma.','Pendiente'), (now(),'General','App','Cita para revisión anual.','Cancelada');
+INSERT INTO `centrodesalud`.`tab_citas`(`Fecha`, `Especialidad`, `MétodoReserva`, `Descripción`, `Estado`) VALUES (now(),'Pedicurista','App','Cita para uña encarnada.','Pendiente'), (now(),'Cardiología','App','Cita para electrocardiograma.','Pendiente'), (now(),'General','App','Cita para revisión anual.','Cancelada');
 
-INSERT INTO `tab_citasusuario`(`CodCita`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454');
-ALTER TABLE tab_usuarios ADD COLUMN Avatar LONGBLOB;
+INSERT INTO `centrodesalud`.`tab_citasusuario`(`CodCita`, `Cédula`) VALUES ('1','118420454'), ('2','118420454'), ('3','118420454');
+
+INSERT INTO `centrodesalud`.`tab_alergias`(`CodAlergia`, `Nombre`, `Descripción`, `Tipo`) VALUES ('1', 'Pollen', 'Alergia de inhalacion.', 'Inhalacion'), ('2', 'Abejas', 'Alergia de picadura.', 'Picadura'), ('3', 'Mariscos', 'Alergia de ingestion.', 'Ingestion');
+INSERT INTO `centrodesalud`.`tab_historialmedico`(`CodHistorial`, `Enfermedad`, `Descripción`, `Tipo`) VALUES ('1', 'Diabetes', 'Enfermedad cronica.', 'Diabetes'), ('2', 'Presion alta', 'Enfermedad cronica.', 'Cardiovascular'), ('3', 'Asma', 'Enfermedad cronica.', 'Respiratoria');
