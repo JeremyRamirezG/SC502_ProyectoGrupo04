@@ -78,13 +78,20 @@ try{
                 <img class="form__logo" src="img/logo.png" alt="Logotipo">
                 <h2>Inicio de sesión</h2>
                 <?php
-                    if($cedula_err!='')
+                    if($cedula_err!=='')
                     {
                         echo "<span class='errores'>$cedula_err</span>";
                     }
-                    if ( $contrasena_err!='')
+                    if ($cedula_err!=='' && $contrasena_err!=='')
                     {
-                        echo "<span class='errores'>$cedula_err</span><br><span class='errores'>$contrasena_err</span>";
+                        echo "<br>";
+                    }
+                    if ($contrasena_err!=='')
+                    {
+                        if($contrasena_err!==$cedula_err)
+                        {
+                            echo "<span class='errores'>$contrasena_err</span>";
+                        }
                     }
                 ?>
                 <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
