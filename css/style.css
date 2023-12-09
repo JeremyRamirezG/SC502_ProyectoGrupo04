@@ -74,6 +74,7 @@ h1 span {
 .errores {
     color: var(--rojo);
     font-size: large;
+    padding: 10px;
 }
 
 /* Forms ocultos */

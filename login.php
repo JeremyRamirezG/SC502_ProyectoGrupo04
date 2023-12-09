@@ -22,7 +22,11 @@ try{
 
         if(empty($cedula_val)||empty($confirmarContrasena_val))
         {
-            $cedula_err = $contrasena_err = 'Algún dato requerido se encuentra vacío.';
+            $cedula_err = 'Ingrese su cédula.';
+        }
+        else if(empty($confirmarContrasena_val))
+        {
+            $contrasena_err = 'Ingrese su contraseña.';
         }
         else
         {
@@ -37,7 +41,8 @@ try{
             $arrayValidar = getDatosArray($query);
             if(!empty($arrayValidar))
             {
-                foreach ($arrayValidar as $value) {
+                foreach ($arrayValidar as $value)
+                {
                     $contrasena_val = $value['Contraseña'];
                 }
                 if (password_verify($confirmarContrasena_val, $contrasena_val)) 
@@ -72,7 +77,15 @@ try{
             <div class="contenedor__form">
                 <img class="form__logo" src="img/logo.png" alt="Logotipo">
                 <h2>Inicio de sesión</h2>
-                <span class="error">Ocurrio un error al iniciar sesión, por favor intente de nuevo:<br><?php echo $cedula_err."<br>".$contrasena_err?></span>
+                <?php
+                    if(!($cedula_err=='' || $contrasena_err=='')&&($cedula_err==$contrasena_err))
+                    {
+                        echo "<span class='errores'>$cedula_err</span>";
+                    } else if (!($cedula_err=='' || $contrasena_err=='')&&!($cedula_err==$contrasena_err))
+                    {
+                        echo "<span class='errores'>$cedula_err<br>$contrasena_err</span>";
+                    }
+                ?>
                 <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <div class="usuario__data">
                         <input type="number" name="cedula" id="cedula">
