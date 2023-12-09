@@ -20,14 +20,10 @@ try{
         $cedula_val = recogePost('cedula');
         $confirmarContrasena_val = recogePost('contrasena');
 
-        if($cedula_val='')
+        if($cedula_val=="")
         {
             $cedula_err = 'Ingrese su cédula.';
-        }
-        else if($confirmarContrasena_val='')
-        {
-            $contrasena_err = 'Ingrese su contraseña.';
-        }
+        } 
         else
         {
             if(!preg_match('/^[1-9][0-9]*$/', $cedula_val))
@@ -35,7 +31,11 @@ try{
                 $cedula_err = 'El formato de la cédula no es válido.';
             }
         }
-        if($cedula_err=''&&$contrasena_err='')
+        if($confirmarContrasena_val=="")
+        {
+            $contrasena_err = 'Ingrese su contraseña.';
+        }
+        if($cedula_err==''&&$contrasena_err=='')
         {
             $query = "SELECT Cédula, Contraseña FROM tab_usuarios WHERE Cédula = $cedula_val";
             $arrayValidar = getDatosArray($query);
@@ -78,12 +78,16 @@ try{
                 <img class="form__logo" src="img/logo.png" alt="Logotipo">
                 <h2>Inicio de sesión</h2>
                 <?php
-                    if(!($cedula_err=='' || $contrasena_err=='')&&($cedula_err==$contrasena_err))
+                    if($cedula_err!='' || $contrasena_err!='')
                     {
-                        echo "<span class='errores'>$cedula_err</span>";
-                    } else if (!($cedula_err=='' || $contrasena_err=='')&&!($cedula_err==$contrasena_err))
-                    {
-                        echo "<span class='errores'>$cedula_err<br>$contrasena_err</span>";
+                        if($cedula_err==$contrasena_err)
+                        {
+                            echo "<span class='errores'>$cedula_err</span>";
+                        }
+                        else if ($cedula_err!==$contrasena_err)
+                        {
+                            echo "<span class='errores'>$cedula_err</span><br><span class='errores'>$contrasena_err</span>";
+                        }
                     }
                 ?>
                 <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
