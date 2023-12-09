@@ -72,7 +72,7 @@ try{
             <div class="contenedor__form">
                 <img class="form__logo" src="img/logo.png" alt="Logotipo">
                 <h2>Inicio de sesión</h2>
-                <p>Ingrese los siguientes datos acorde a su información.</p>
+                <span class="error">Ocurrio un error al iniciar sesión, por favor intente de nuevo:<br><?php echo $cedula_err."<br>".$contrasena_err?></span>
                 <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <div class="usuario__data">
                         <input type="number" name="cedula" id="cedula">

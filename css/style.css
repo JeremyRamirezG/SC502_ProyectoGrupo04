@@ -7,6 +7,7 @@
     --secundarioOscuro: #9BBEC8;
     --blanco: #FFF;
     --negro: #000;
+    --rojo: #8B0000;
     --fuentePrincipal: 'Rubik', sans-serif;
 }
 
@@ -70,6 +71,11 @@ h1 span {
 }
 
 /* Declaracion de hoja de estilos para el resto del sistema */
+.errores {
+    color: var(--rojo);
+    font-size: large;
+}
+
 /* Forms ocultos */
 .contenedor__form__oculto label {
     font-size: large;
