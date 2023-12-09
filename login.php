@@ -20,7 +20,7 @@ try{
         $cedula_val = recogePost('cedula');
         $confirmarContrasena_val = recogePost('contrasena');
 
-        if(empty($cedula_val)||empty($confirmarContrasena_val))
+        if(empty($cedula_val))
         {
             $cedula_err = 'Ingrese su cédula.';
         }
