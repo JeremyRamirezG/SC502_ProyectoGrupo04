@@ -20,11 +20,11 @@ try{
         $cedula_val = recogePost('cedula');
         $confirmarContrasena_val = recogePost('contrasena');
 
-        if(empty($cedula_val))
+        if($cedula_val='')
         {
             $cedula_err = 'Ingrese su cédula.';
         }
-        else if(empty($confirmarContrasena_val))
+        else if($confirmarContrasena_val='')
         {
             $contrasena_err = 'Ingrese su contraseña.';
         }
@@ -35,7 +35,7 @@ try{
                 $cedula_err = 'El formato de la cédula no es válido.';
             }
         }
-        if(empty($cedula_err)&&empty($contrasena_err))
+        if($cedula_err=''&&$contrasena_err='')
         {
             $query = "SELECT Cédula, Contraseña FROM tab_usuarios WHERE Cédula = $cedula_val";
             $arrayValidar = getDatosArray($query);
