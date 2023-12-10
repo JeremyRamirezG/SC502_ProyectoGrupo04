@@ -22,8 +22,9 @@ try{
         if(empty($codigo_val))
         {
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
-            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br>Redireccionando a página principal.</span>";
+            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
             sleep(4);
+            echo "<script>window.location.href='../citas.php';</script>";
         }
         else
         {
@@ -45,7 +46,7 @@ try{
             if(empty($especialidad_val)||empty($fecha_val)||empty($metodo_val)||empty($desc_val)||empty($estado_val))
             {
                 $codigo_err = $estado_err = $especialidad_err = $fecha_err = $metodo_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
-                echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br>Redireccionando a página principal.</span>";
+                echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
                 sleep(4);
                 echo "<script>window.location.href='../citas.php';</script>";
                 //header("Location: ../citas.php");
