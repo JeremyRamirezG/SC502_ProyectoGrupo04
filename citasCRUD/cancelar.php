@@ -1,6 +1,21 @@
 <?php
-require_once "../templates/head.php";
-echo "\n<body>";
+echo "<!DOCTYPE html>
+    \n<html lang='es'>
+
+    \n<head>
+        \n<meta charset='UTF-8'>
+        \n<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        \n<title>Centro Médico RAS</title>
+
+        \n<link rel='preconnect' href='https://fonts.googleapis.com'>
+        \n<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        \n<link href='https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap' rel='stylesheet'>
+
+        \n<link rel='stylesheet' href='../css/normalize.css'>
+        \n<link rel='stylesheet' href='../css/style.css'>
+    \n</head>
+
+    \n<body>";
 
 try{
     //Primero se inicia la sesión y se valida si ya se ha ingresado.
