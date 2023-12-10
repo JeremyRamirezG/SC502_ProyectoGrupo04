@@ -13,7 +13,7 @@ try {
     require_once "templates/head.php";
     
     $oConexion = Conecta();
-    $tipoSangre_err = $estatura_err = $peso_err = $avatar_err = '';
+    $sys_err = $tipoSangre_err = $estatura_err = $peso_err = $avatar_err = '';
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once "templates/recoge.php";

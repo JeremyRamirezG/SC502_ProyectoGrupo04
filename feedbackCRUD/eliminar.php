@@ -24,6 +24,8 @@ try{
         if(empty($codigo_val))
         {
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
+            echo "<span class='errores'>$codigo_err<br>Redireccionando a página principal.</span>";
+            sleep(2);
             header("Location: ../soporteFeedback.php");
         }
         else

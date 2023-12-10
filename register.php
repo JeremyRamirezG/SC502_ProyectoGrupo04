@@ -5,7 +5,7 @@ try {
     require_once "dbCRUD/datosCRUD.php";
     require_once "templates/head.php";
 
-    $cedula_err = $correo_err = $telefono_err = $primerNombre_err = $segundoNombre_err = $apellidoPaterno_err = $apellidoMaterno_err = $contrasena_err = $confirmarContrasena_err = '';
+    $sys_err = $cedula_err = $correo_err = $telefono_err = $primerNombre_err = $segundoNombre_err = $apellidoPaterno_err = $apellidoMaterno_err = $contrasena_err = $confirmarContrasena_err = '';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Proceso de validacion de los diferentes valores insertados por el cliente
@@ -62,6 +62,7 @@ try {
     }
 } catch (Throwable $th) {
     error_log($th, 0);
+    $sys_err = 'Ocurrio un error en el sistema.';
 }
 ?>
 
@@ -70,57 +71,62 @@ try {
         <div class="contenedor__form">
             <img class="form__logo" src="img/logo.png" alt="Logotipo">
             <h2>Registro de usuarios</h2>
+            <?php 
+            if($cedula_err!==''&& $cedula_err=='Algún dato requerido se encuentra vacío.')
+            {
+                echo "<span class='errores'>$cedula_err</span>";
+            }
+            if ($sys_err!=='')
+            {
+                echo "<span class='errores'>$sys_err</span>";
+            }
+            else
+            {
+                echo "<span class='errores'>$cedula_err $telefono_err $correo_err $confirmarContrasena_err</span>";
+            }
+            ?>
             <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <div class="contenedor__form__grid">
-                    <?php if($cedula_err!==''){echo "<span class='errores'>$cedula_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="number" name="cedula" id="cedula">
                         <span></span>
                         <label for="cedula">Cédula usuario:</label>
                     </div>
-                    <?php if($primerNombre_err!==''){echo "<span class='errores'>$primerNombre_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="text" name="primerNombre" id="primerNombre">
                         <span></span>
                         <label for="primerNombre">Primer nombre:</label>
                     </div>
-                    <?php if($segundoNombre_err!==''){echo "<span class='errores'>$segundoNombre_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="text" name="segundoNombre" id="segundoNombre">
                         <span></span>
                         <label for="segundoNombre">Segundo nombre:</label>
                     </div>
-                    <?php if($apellidoPaterno_err!==''){echo "<span class='errores'>$apellidoPaterno_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="text" name="primerApellido" id="primerApellido">
                         <span></span>
                         <label for="primerApellido">Primer apellido:</label>
                     </div>
-                    <?php if($apellidoMaterno_err!==''){echo "<span class='errores'>$apellidoMaterno_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="text" name="segundoApellido" id="segundoApellido">
                         <span></span>
                         <label for="segundoApellido">Segundo apellido:</label>
                     </div>
-                    <?php if($correo_err!==''){echo "<span class='errores'>$correo_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="email" name="correo" id="correo">
                         <span></span>
                         <label for="correo">Correo usuario:</label>
                     </div>
-                    <?php if($telefono_err!==''){echo "<span class='errores'>$telefono_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="number" name="telefono" id="telefono">
                         <span></span>
                         <label for="telefono">Teléfono usuario:</label>
                     </div>
-                    <?php if($confirmarContrasena_err!==''){echo "<span class='errores'>$confirmarContrasena_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="password" name="contrasena" id="contrasena">
                         <span></span>
                         <label for="contrasena">Contraseña:</label>
                     </div>
-                    <?php if($confirmarContrasena_err!==''){echo "<span class='errores'>$confirmarContrasena_err</span>";} ?>
                     <div class="usuario__data">
                         <input type="password" name="confirmarContrasena" id="confirmarContrasena">
                         <span></span>

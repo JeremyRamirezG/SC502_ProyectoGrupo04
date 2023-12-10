@@ -27,6 +27,8 @@ try{
         if(empty($especialidad_val)||empty($fecha_val)||empty($metodo_val)||empty($desc_val))
         {
             $especialidad_err = $fecha_err = $metodo_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
+            echo "<span class='errores'>$especialidad_err<br>Redireccionando a página principal.</span>";
+            sleep(2);
             header("Location: ../citas.php");
         }
         else
@@ -48,5 +50,8 @@ try{
 
 } catch(Throwable $th) {
     error_log($th, 0);
+    echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
+    sleep(2);
+    header("Location: ../citas.php");
 }
 ?>

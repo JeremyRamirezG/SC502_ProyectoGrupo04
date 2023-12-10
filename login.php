@@ -11,7 +11,7 @@ try{
     require_once "dbCRUD/datosCRUD.php";
     require_once "templates/head.php";
 
-    $cedula_err = $contrasena_err = '';
+    $sys_err = $cedula_err = $contrasena_err = '';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Proceso de validacion de los diferentes valores insertados por el cliente
@@ -69,6 +69,7 @@ try{
 
 } catch(Throwable $th) {
     error_log($th, 0);
+    $sys_err = 'Ocurrio un error en el sistema.';
 }
 
 ?>
@@ -92,6 +93,10 @@ try{
                         {
                             echo "<span class='errores'>$contrasena_err</span>";
                         }
+                    }
+                    if ($sys_err!=='')
+                    {
+                        echo "<span class='errores'>$sys_err</span>";
                     }
                 ?>
                 <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">

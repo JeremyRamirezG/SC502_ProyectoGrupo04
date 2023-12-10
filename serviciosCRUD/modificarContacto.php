@@ -26,6 +26,8 @@ try{
         if(empty($codigo_val)||empty($nombre_val)||empty($telefono_val)||empty($ubicacion_val))
         {
             $codigo_err = $nombre_err = $telefono_err = $ubicacion_err = 'Algún dato requerido se encuentra vacío.';
+            echo "<span class='errores'>$calificacion_err<br>Redireccionando a página principal.</span>";
+            sleep(2);
             header("Location: ../servicios.php");
         }
         else
@@ -42,5 +44,8 @@ try{
 
 } catch(Throwable $th) {
     error_log($th, 0);
+    echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
+    sleep(2);
+    header("Location: ../servicios.php");
 }
 ?>
