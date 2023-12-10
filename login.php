@@ -101,7 +101,7 @@ try{
                 ?>
                 <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <div class="usuario__data">
-                        <input type="number" name="cedula" id="cedula">
+                        <input type="number" name="cedula" id="cedula" required>
                         <span></span>
                         <label for="cedula">Cédula usuario:</label>
                     </div>
