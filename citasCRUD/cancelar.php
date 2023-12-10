@@ -1,5 +1,12 @@
 <?php
-echo "<!DOCTYPE html>
+try{
+    //Primero se inicia la sesión y se valida si ya se ha ingresado.
+    session_start();
+    if(!isset($_SESSION["logged"]) || !($_SESSION["logged"] === true)){
+        header("location: login.php");
+        exit;
+    }
+    echo "<!DOCTYPE html>
     \n<html lang='es'>
 
     \n<head>
@@ -16,14 +23,6 @@ echo "<!DOCTYPE html>
     \n</head>
 
     \n<body>";
-
-try{
-    //Primero se inicia la sesión y se valida si ya se ha ingresado.
-    session_start();
-    if(!isset($_SESSION["logged"]) || !($_SESSION["logged"] === true)){
-        header("location: login.php");
-        exit;
-    }
 
     //Incluir el archivo para realizar la conexion a la base de datos
     require_once "../dbCRUD/conexion.php";
