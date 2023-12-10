@@ -26,17 +26,17 @@ try{
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
             echo "<span class='errores'>$codigo_err<br>Redireccionando a página principal.</span>";
             sleep(2);
-            header("Location: ../soporteFeedback.php");
+            echo "<script>window.location.href='../soporteFeedback.php';</script>";
         }
         else
         {
             $resultado = borrarDatos($query);
             if($resultado!=''){
-                header("Location: ../soporteFeedback.php");
+                echo "<script>window.location.href='../soporteFeedback.php';</script>";
             }
         }
     } else {
-        header("Location: ../soporteFeedback.php");
+        echo "<script>window.location.href='../soporteFeedback.php';</script>";
     }
 
 } catch(Throwable $th) {

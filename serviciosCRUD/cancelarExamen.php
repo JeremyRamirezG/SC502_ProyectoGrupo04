@@ -24,7 +24,7 @@ try{
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
             echo "<span class='errores'>$codigo_err<br>Redireccionando a página principal.</span>";
             sleep(2);
-            header("Location: ../servicios.php");
+            echo "<script>window.location.href='../servicios.php';</script>";
         }
         else
         {
@@ -48,7 +48,8 @@ try{
                 $codigo_err = $estado_err = $especialidad_err = $fecha_err = $metodo_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
                 echo "<span class='errores'>$codigo_err<br>Redireccionando a página principal.</span>";
                 sleep(2);
-                header("Location: ../servicios.php");
+                //header("Location: ../servicios.php");
+                echo "<script>window.location.href='../servicios.php';</script>";
             }
             else
             {
@@ -58,18 +59,18 @@ try{
                     $fp = fopen('../data/examenesCancelados.txt', 'a');
                     fwrite($fp, $txt);  
                     fclose($fp);  
-                    header("Location: ../servicios.php");
+                    echo "<script>window.location.href='../servicios.php';</script>";
                 }
             }
         }
     } else {
-        header("Location: ../servicios.php");
+        echo "<script>window.location.href='../servicios.php';</script>";
     }
 
 } catch(Throwable $th) {
     error_log($th, 0);
     echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
     sleep(2);
-    header("Location: ../servicios.php");
+    echo "<script>window.location.href='../servicios.php';</script>";
 }
 ?>

@@ -30,24 +30,24 @@ try{
             $codigo_err = $estado_err = $especialidad_err = $fecha_err = $metodo_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
             echo "<span class='errores'>$codigo_err<br>Redireccionando a página principal.</span>";
             sleep(2);
-            header("Location: ../citas.php");
+            echo "<script>window.location.href='../citas.php';</script>";
         }
         else
         {
             require_once "../dbCRUD/datosCRUD.php";
             $resultado = actualizarDatos('tab_citas',$objDatos,$codigo_val);
             if($resultado!=''){
-                header("Location: ../citas.php");
+                echo "<script>window.location.href='../citas.php';</script>";
             }
         }
     } else {
-        header("Location: ../citas.php");
+        echo "<script>window.location.href='../citas.php';</script>";
     }
 
 } catch(Throwable $th) {
     error_log($th, 0);
     echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
     sleep(2);
-    header("Location: ../citas.php");
+    echo "<script>window.location.href='../citas.php';</script>";
 }
 ?>

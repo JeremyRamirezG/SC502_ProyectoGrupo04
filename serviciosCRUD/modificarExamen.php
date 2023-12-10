@@ -30,24 +30,24 @@ try{
             $estado_err = $codigo_err = $tipo_err = $fecha_err = $desc_err = $resultado_err = 'Algún dato requerido se encuentra vacío.';
             echo "<span class='errores'>$estado_err<br>Redireccionando a página principal.</span>";
             sleep(2);
-            header("Location: ../servicios.php");
+            echo "<script>window.location.href='../servicios.php';</script>";
         }
         else
         {
             require_once "../dbCRUD/datosCRUD.php";
             $resultado = actualizarDatos('tab_examenesmedicos',$objDatos,$codigo_val);
             if($resultado!=''){
-                header("Location: ../servicios.php");
+                echo "<script>window.location.href='../servicios.php';</script>";
             }
         }
     } else {
-        header("Location: ../servicios.php");
+        echo "<script>window.location.href='../servicios.php';</script>";
     }
 
 } catch(Throwable $th) {
     error_log($th, 0);
     echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
     sleep(2);
-    header("Location: ../servicios.php");
+    echo "<script>window.location.href='../servicios.php';</script>";
 }
 ?>

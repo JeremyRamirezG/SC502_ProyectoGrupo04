@@ -28,29 +28,30 @@ try{
             $titulo_err = $area_err = $calificacion_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
             echo "<span class='errores'>$titulo_err $area_err $calificacion_err $desc_err<br>Redireccionando a página principal.</span>";
             sleep(2);
-            header("Location: ../soporteFeedback.php");
+            //header("Location: ../soporteFeedback.php");
+            echo "<script>window.location.href='../soporteFeedback.php';</script>";
         }
         if ($calificacion_val < 1 || $calificacion_val > 10)
         {
             $calificacion_err = 'La calificacion no es correcta.';
             echo "<span class='errores'>$calificacion_err<br>Redireccionando a página principal.</span>";
             sleep(2);
-            header("Location: ../soporteFeedback.php");
+            echo "<script>window.location.href='../soporteFeedback.php';</script>";
         }
         else
         {
             require_once "../dbCRUD/datosCRUD.php";
             $resultado = ingresoDatos('tab_feedback',$objDatos);
-            header("Location: ../soporteFeedback.php");
+            echo "<script>window.location.href='../soporteFeedback.php';</script>";
         }
     } else {
-        header("Location: ../soporteFeedback.php");
+        echo "<script>window.location.href='../soporteFeedback.php';</script>";
     }
 
 } catch(Throwable $th) {
     error_log($th, 0);
     echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
     sleep(2);
-    header("Location: ../soporteFeedback.php");
+    echo "<script>window.location.href='../soporteFeedback.php';</script>";
 }
 ?>
