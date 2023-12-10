@@ -98,21 +98,20 @@ try {
         <div class="contenedor__form">
             <img class="form__logo" src="img/logo.png" alt="Logotipo">
             <h2>Actualizar Datos</h2>
-            <p>Ingrese los siguientes datos para actualizar su información.</p>
             <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
                 <div class="contenedor__form__grid">
                     <div class="usuario__data">
-                        <input type="text" name="tipoSangre" id="tipoSangre">
+                        <input type="text" name="tipoSangre" id="tipoSangre" required>
                         <span><?php echo $tipoSangre_err; ?></span>
                         <label for="tipoSangre">Tipo de sangre:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="number" name="estatura" id="estatura">
+                        <input type="number" name="estatura" id="estatura" required>
                         <span><?php echo $estatura_err; ?></span>
                         <label for="estatura">Estatura (cm):</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="number" name="peso" id="peso">
+                        <input type="number" name="peso" id="peso" required>
                         <span><?php echo $peso_err; ?></span>
                         <label for="peso">Peso (kg):</label>
                     </div>
