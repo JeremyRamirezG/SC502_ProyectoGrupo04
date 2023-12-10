@@ -106,7 +106,7 @@ try{
                         <label for="cedula">Cédula usuario:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="password" name="contrasena" id="contrasena">
+                        <input type="password" name="contrasena" id="contrasena" required>
                         <span></span>
                         <label for="contrasena">Contraseña:</label>
                     </div>

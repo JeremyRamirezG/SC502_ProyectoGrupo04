@@ -88,47 +88,47 @@ try {
             <form class="form__datos" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <div class="contenedor__form__grid">
                     <div class="usuario__data">
-                        <input type="number" name="cedula" id="cedula">
+                        <input type="number" name="cedula" id="cedula" required>
                         <span></span>
                         <label for="cedula">Cédula usuario:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="text" name="primerNombre" id="primerNombre">
+                        <input type="text" name="primerNombre" id="primerNombre" required>
                         <span></span>
                         <label for="primerNombre">Primer nombre:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="text" name="segundoNombre" id="segundoNombre">
+                        <input type="text" name="segundoNombre" id="segundoNombre" required>
                         <span></span>
                         <label for="segundoNombre">Segundo nombre:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="text" name="primerApellido" id="primerApellido">
+                        <input type="text" name="primerApellido" id="primerApellido" required>
                         <span></span>
                         <label for="primerApellido">Primer apellido:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="text" name="segundoApellido" id="segundoApellido">
+                        <input type="text" name="segundoApellido" id="segundoApellido" required>
                         <span></span>
                         <label for="segundoApellido">Segundo apellido:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="email" name="correo" id="correo">
+                        <input type="email" name="correo" id="correo" required>
                         <span></span>
                         <label for="correo">Correo usuario:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="number" name="telefono" id="telefono">
+                        <input type="number" name="telefono" id="telefono" required>
                         <span></span>
                         <label for="telefono">Teléfono usuario:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="password" name="contrasena" id="contrasena">
+                        <input type="password" name="contrasena" id="contrasena" required>
                         <span></span>
                         <label for="contrasena">Contraseña:</label>
                     </div>
                     <div class="usuario__data">
-                        <input type="password" name="confirmarContrasena" id="confirmarContrasena">
+                        <input type="password" name="confirmarContrasena" id="confirmarContrasena" required>
                         <span></span>
                         <label for="confirmarContrasena">Confirmar contraseña:</label>
                     </div>
