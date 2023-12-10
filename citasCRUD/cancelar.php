@@ -23,8 +23,7 @@ try{
         {
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
             echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
-            sleep(4);
-            echo "<script>window.location.href='../citas.php';</script>";
+            echo "<script>setTimeout(() => {window.location.href='../citas.php';}, 2000);</script>";
         }
         else
         {
