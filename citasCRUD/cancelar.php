@@ -6,23 +6,6 @@ try{
         header("location: login.php");
         exit;
     }
-    echo "<!DOCTYPE html>
-    \n<html lang='es'>
-
-    \n<head>
-        \n<meta charset='UTF-8'>
-        \n<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        \n<title>Centro Médico RAS</title>
-
-        \n<link rel='preconnect' href='https://fonts.googleapis.com'>
-        \n<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-        \n<link href='https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap' rel='stylesheet'>
-
-        \n<link rel='stylesheet' href='../css/normalize.css'>
-        \n<link rel='stylesheet' href='../css/style.css'>
-    \n</head>
-
-    \n<body>";
 
     //Incluir el archivo para realizar la conexion a la base de datos
     require_once "../dbCRUD/conexion.php";
@@ -60,7 +43,7 @@ try{
             if(empty($especialidad_val)||empty($fecha_val)||empty($metodo_val)||empty($desc_val)||empty($estado_val))
             {
                 $codigo_err = $estado_err = $especialidad_err = $fecha_err = $metodo_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
-                echo "<span class='errores'>$codigo_err<br>Redireccionando a página principal.</span>";
+                echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br>Redireccionando a página principal.</span>";
                 sleep(4);
                 echo "<script>window.location.href='../citas.php';</script>";
                 //header("Location: ../citas.php");
@@ -87,7 +70,4 @@ try{
     sleep(4);
     echo "<script>window.location.href='../citas.php';</script>";
 }
-
-echo "\n</body>
-      \n</html>";
 ?>
