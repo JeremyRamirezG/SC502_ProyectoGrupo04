@@ -22,6 +22,8 @@ try{
         if(empty($codigo_val))
         {
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
+            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br>Redireccionando a página principal.</span>";
+            sleep(4);
         }
         else
         {
