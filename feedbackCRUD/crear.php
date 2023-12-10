@@ -26,17 +26,14 @@ try{
         if(empty($titulo_val)||empty($area_val)||empty($calificacion_val)||empty($desc_val))
         {
             $titulo_err = $area_err = $calificacion_err = $desc_err = 'Algún dato requerido se encuentra vacío.';
-            echo "<span class='errores'>$titulo_err $area_err $calificacion_err $desc_err<br>Redireccionando a página principal.</span>";
-            sleep(2);
-            //header("Location: ../soporteFeedback.php");
-            echo "<script>window.location.href='../soporteFeedback.php';</script>";
+            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$titulo_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
+            echo "<script>setTimeout(() => {window.location.href='../soporteFeedback.php';}, 2000);</script>";
         }
         if ($calificacion_val < 1 || $calificacion_val > 10)
         {
             $calificacion_err = 'La calificacion no es correcta.';
-            echo "<span class='errores'>$calificacion_err<br>Redireccionando a página principal.</span>";
-            sleep(2);
-            echo "<script>window.location.href='../soporteFeedback.php';</script>";
+            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$calificacion_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
+            echo "<script>setTimeout(() => {window.location.href='../soporteFeedback.php';}, 2000);</script>";
         }
         else
         {
@@ -50,8 +47,7 @@ try{
 
 } catch(Throwable $th) {
     error_log($th, 0);
-    echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
-    sleep(2);
-    echo "<script>window.location.href='../soporteFeedback.php';</script>";
+    echo "<span class='errores'>Ocurrio un error en el sistema.<br></span><span class='errores'>Redireccionando a página principal.</span>";
+    echo "<script>setTimeout(() => {window.location.href='../soporteFeedback.php';}, 2000);</script>";
 }
 ?>

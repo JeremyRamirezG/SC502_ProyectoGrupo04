@@ -24,9 +24,8 @@ try{
         if(empty($codigo_val))
         {
             $codigo_err = 'Algún dato requerido se encuentra vacío.';
-            echo "<span class='errores'>$estado_err<br>Redireccionando a página principal.</span>";
-            sleep(2);
-            header("Location: ../dashboard.php");
+            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$codigo_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
+            echo "<script>setTimeout(() => {window.location.href='../dashboard.php';}, 2000);</script>";
         }
         else
         {
@@ -41,8 +40,7 @@ try{
 
 } catch(Throwable $th) {
     error_log($th, 0);
-    echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
-    sleep(2);
-    header("Location: ../dashboard.php");
+    echo "<span class='errores'>Ocurrio un error en el sistema.<br></span><span class='errores'>Redireccionando a página principal.</span>";
+    echo "<script>setTimeout(() => {window.location.href='../dashboard.php';}, 2000);</script>";
 }
 ?>

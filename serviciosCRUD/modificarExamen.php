@@ -28,9 +28,8 @@ try{
         if(empty($codigo_val)||empty($tipo_val)||empty($fecha_val)||empty($resultado_val)||empty($desc_val)||empty($estado_val))
         {
             $estado_err = $codigo_err = $tipo_err = $fecha_err = $desc_err = $resultado_err = 'Algún dato requerido se encuentra vacío.';
-            echo "<span class='errores'>$estado_err<br>Redireccionando a página principal.</span>";
-            sleep(2);
-            echo "<script>window.location.href='../servicios.php';</script>";
+            echo "<span style='color: #8B0000;font-size: large;padding: 10px;'>$estado_err<br></span><span style='color: #8B0000;font-size: large;padding: 10px;'>Redireccionando a página principal.</span>";
+            echo "<script>setTimeout(() => {window.location.href='../servicios.php';}, 2000);</script>";
         }
         else
         {
@@ -46,8 +45,7 @@ try{
 
 } catch(Throwable $th) {
     error_log($th, 0);
-    echo "<span class='errores'>Ocurrio un error en el sistema.<br>Redireccionando a página principal.</span>";
-    sleep(2);
-    echo "<script>window.location.href='../servicios.php';</script>";
+    echo "<span class='errores'>Ocurrio un error en el sistema.<br></span><span class='errores'>Redireccionando a página principal.</span>";
+    echo "<script>setTimeout(() => {window.location.href='../servicios.php';}, 2000);</script>";
 }
 ?>
