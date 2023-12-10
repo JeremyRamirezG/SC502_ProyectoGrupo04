@@ -1,6 +1,6 @@
 <?php
-require_once "../templates/head.php
-              \n<body>";
+require_once "../templates/head.php";
+echo "\n<body>";
 
 try{
     //Primero se inicia la sesión y se valida si ya se ha ingresado.
@@ -74,6 +74,6 @@ try{
     echo "<script>window.location.href='../citas.php';</script>";
 }
 
-require_once "\n</body>
-              \n</html>";
+echo "\n</body>
+      \n</html>";
 ?>
