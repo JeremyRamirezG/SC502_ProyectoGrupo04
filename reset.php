@@ -8,16 +8,18 @@ try{
 
     //Incluir el archivo para realizar la conexion a la base de datos
     require_once "dbCRUD/conexion.php";
+    include_once "dbCRUD/datosCRUD.php";
     require_once "templates/head.php";
     require_once "templates/recoge.php";
 
-    $contrasena_err = $email_err = '';
+    $sys_err = $contrasena_err = $email_err = '';
     $email = base64_decode(recogeGet('secret'));
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $oConexion = Conecta();
+
         try {
             //Proceso de validacion de los diferentes valores insertados por el cliente
-            $oConexion = Conecta();
 
             $email_val = recogePost('email');
             $contrasena_val = password_hash(recogePost('contrasena'), PASSWORD_DEFAULT);
@@ -26,7 +28,7 @@ try{
             $validarEmail = getDatosArray($queryEmail);
 
             //Validación de que los datos estén llenos.
-            if (empty($correo_val) || empty($contrasena_val) || empty($confirmarContrasena_val)) {
+            if (empty($email_val) || empty($contrasena_val) || empty($confirmarContrasena_val)) {
                 $contrasena_err = $email_err = 'Algún dato requerido se encuentra vacío.';
             } else {
                 //Validación que la cédula, correo y contraseña tengan el formato correcto.
@@ -67,8 +69,6 @@ try{
 } catch(Throwable $th) {
     error_log($th, 0);
     $sys_err = 'Ocurrio un error en el sistema.';
-} finally {
-    Desconecta($oConexion);
 }
 
 ?>
