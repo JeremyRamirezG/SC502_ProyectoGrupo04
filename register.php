@@ -39,7 +39,7 @@ try {
                 $confirmarContrasena_err = $contrasena_err = 'El fomato de la contraseña no es válido, recuerde que la confirmación debe ser igual y debe tener mas de seis dígitos.';
             }
             //Validación de que el correo no esté registrada en el sistema.
-            $queryEmail = "SELECT Correo FROM tab_usuarios WHERE Correo = '$email_val'";
+            $queryEmail = "SELECT Correo FROM tab_usuarios WHERE Correo = '$correo_val'";
             $validarEmail = getDatosArray($queryEmail);
             if (!empty($validarEmail)) {
                 $correo_err = 'Revise la dirección de correo electrónico.';
