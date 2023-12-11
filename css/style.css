@@ -369,6 +369,7 @@ body {
         background-color: var(--blanco);
         width: 100%;
         min-height: 100vh;
+        padding: 10px;
     }
 }
 @media (min-width: 1500px)  {
@@ -399,6 +400,7 @@ body {
         transform: translate(-50%, -50%);
         background-color: var(--blanco);
         border-radius: 10px;
+        padding: 10px;
     }
 }
 .form__logo {
