@@ -38,6 +38,12 @@ try {
             if ((strlen($contrasena_val) < 6) || (!password_verify($confirmarContrasena_val, $contrasena_val))) {
                 $confirmarContrasena_err = $contrasena_err = 'El fomato de la contraseña no es válido, recuerde que la confirmación debe ser igual y debe tener mas de seis dígitos.';
             }
+            //Validación de que el correo no esté registrada en el sistema.
+            $queryEmail = "SELECT Correo FROM tab_usuarios WHERE Correo = '$email_val'";
+            $validarEmail = getDatosArray($queryEmail);
+            if (!empty($validarEmail)) {
+                $correo_err = 'Revise la dirección de correo electrónico.';
+            }
             //Validación de que la cédula no esté registrada en el sistema.
             $query = "SELECT Cédula FROM tab_usuarios WHERE Cédula = $cedula_val";
             if (!empty(getDatosArray($query))) 

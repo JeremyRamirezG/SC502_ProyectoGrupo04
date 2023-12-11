@@ -41,7 +41,7 @@ try{
         {
             $body = '<div>
                     <h1>Reinicio de contrasena</h1>
-                    <p><br><b>Hola!</b> este correo esta siendo recibido ya que usted solicitó reiniciar su contrasena, porfavor haga click en el boton para reiniciar.<br></p>
+                    <p><br><b>Hola!</b> este correo esta siendo recibido ya que usted solicito reiniciar su contrasena, porfavor haga click en el boton para reiniciar.<br></p>
                     <p><button class="btn btn-primary"><a href="http://proyecto.jeremys.site/reset.php?secret='.base64_encode($email_val).'">Reiniciar contrasena</a></button><br></p>
                     </div>';
             
@@ -55,8 +55,8 @@ try{
             $mail->SMTPSecure = "tls";      
             $mail->Host = 'smtp.gmail.com';
             $mail->Port = 587; 
-            $mail->Username = "jrgg7350@gmail.com";   //Enter your username/emailid
-            $mail->Password = "incdftbvopeqwzxn";   //Enter your password
+            $mail->Username = "jrgg7350@gmail.com";
+            $mail->Password = "incdftbvopeqwzxn";
             $mail->FromName = "Centro RAS";
             $mail->AddAddress($email);
             $mail->Subject = "Reiniciar Contrasena";

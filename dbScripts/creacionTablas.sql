@@ -117,6 +117,7 @@ CREATE TABLE `centrodesalud`.`tab_historialmedicousuario` (
 ) ENGINE = InnoDB;
 
 ALTER TABLE `centrodesalud`.`tab_usuarios` ADD COLUMN Avatar LONGBLOB;
+ALTER TABLE `centrodesalud`.`tab_usuarios` ADD CONSTRAINT U_Email UNIQUE (Correo);
 
 INSERT INTO `centrodesalud`.`tab_roles`(`Descripción`) VALUES ('ROL_CLIENTE'),('ROL_EMPLEADO'),('ROL_ADMIN');
 INSERT INTO `centrodesalud`.`tab_usuarios`(`Cédula`, `PrimerNombre`, `SegundoNombre`, `PrimerApellido`, `SegundoApellido`, `Teléfono`, `Correo`, `Contraseña`) VALUES ('118420454','Jeremy','Andres','Ramirez','Gonzalez','87370422','jrg7148@gmail.com','$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6'), #Password@123
