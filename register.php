@@ -35,7 +35,7 @@ try {
             if (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i', $correo_val)) {
                 $correo_err = 'El formato del correo electrónico no es válido.';
             } 
-            if ((strlen($contrasena_val) < 6) || (!password_verify($confirmarContrasena_val, $contrasena_val))) {
+            if ((strlen($confirmarContrasena_val) < 6) || (!password_verify($confirmarContrasena_val, $contrasena_val))) {
                 $confirmarContrasena_err = $contrasena_err = 'El fomato de la contraseña no es válido, recuerde que la confirmación debe ser igual y debe tener mas de seis dígitos.';
             }
             //Validación de que el correo no esté registrada en el sistema.
