@@ -11,14 +11,14 @@ try{
     require_once "dbCRUD/datosCRUD.php";
     require_once "templates/head.php";
 
-    $email_err = '';
+    $resultado = $email_err = '';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Proceso de validacion de los diferentes valores insertados por el cliente
         require_once "templates/recoge.php";
 
         $email_val = recogePost('email');
-        $queryEmail = "SELECT Correo FROM tab_usuarios WHERE Correo = $email_val";
+        $queryEmail = "SELECT Correo FROM tab_usuarios WHERE Correo = '$email_val'";
         $validarEmail = getDatosArray($queryEmail);
 
         if($email_val=="")
@@ -40,13 +40,13 @@ try{
         if($email_err=='')
         {
             $body = '<div>
-                     <h1>Reinicio de contraseña</h1>
-                     <p><br><b>Hola!</b> este correo está siendo recibido ya que usted solicitó reiniciar su contraseña, porfavor haga click en el botó para reiniciar.<br></p>
-                     <p><button class="btn btn-primary"><a href="http://proyecto.jeremys.site/reset.php?secret='.base64_encode($email).'">Reiniciar contraseña</a></button><br></p>
-                     </div>';
+                    <h1>Reinicio de contrasena</h1>
+                    <p><br><b>Hola!</b> este correo esta siendo recibido ya que usted solicitó reiniciar su contrasena, porfavor haga click en el boton para reiniciar.<br></p>
+                    <p><button class="btn btn-primary"><a href="http://proyecto.jeremys.site/reset.php?secret='.base64_encode($email_val).'">Reiniciar contrasena</a></button><br></p>
+                    </div>';
             
             include_once('smtp/class.phpmailer.php');
-            include_once('smtp/class.phpmailer.php');
+            include_once('smtp/class.smtp.php');
 
             $email = $email_val; 
             $mail = new PHPMailer;
@@ -57,9 +57,9 @@ try{
             $mail->Port = 587; 
             $mail->Username = "jrgg7350@gmail.com";   //Enter your username/emailid
             $mail->Password = "incdftbvopeqwzxn";   //Enter your password
-            $mail->FromName = "Centro Médico RAS";
+            $mail->FromName = "Centro RAS";
             $mail->AddAddress($email);
-            $mail->Subject = "Reiniciar Contraseña";
+            $mail->Subject = "Reiniciar Contrasena";
             $mail->isHTML( TRUE );
             $mail->Body =$body;
 
@@ -98,7 +98,7 @@ try{
                         <span></span>
                         <label for="email">Correo usuario:</label>
                     </div>
-                    <input type="submit" value="Recuperar password">
+                    <input type="submit" value="Recuperar contraseña">
                 </form>
                 <a class="usuario__links" href="login.php">Si ya tiene una cuenta y sabe su contraseña, inicie sesión.</a>
                 <a class="usuario__links" href="register.php">Si no tiene una cuenta, registrece.</a>
