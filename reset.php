@@ -86,11 +86,11 @@ try{
                 {
                     echo "<br>";
                 }
-                if ($contrasena_err!=='')
+                if ($email_err!=='')
                 {
                     if($contrasena_err!==$email_err)
                     {
-                        echo "<span class='errores'>$contrasena_err</span>";
+                        echo "<span class='errores'>$email_err</span>";
                     }
                 }
                 if ($sys_err!=='')
