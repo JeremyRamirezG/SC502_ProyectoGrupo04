@@ -113,6 +113,7 @@ try{
                     <input type="submit" value="Iniciar Sesión">
                 </form>
                 <a class="usuario__links" href="register.php">Si no tiene una cuenta, registrece.</a>
+                <a class="usuario__links" href="forgot.php">¿Olvidó su contraseña?</a>
             </div>
         </div>
     </body>
