@@ -101,7 +101,7 @@ try{
                     <input type="submit" value="Recuperar contraseña">
                 </form>
                 <a class="usuario__links" href="login.php">Si ya tiene una cuenta y sabe su contraseña, inicie sesión.</a>
-                <a class="usuario__links" href="register.php">Si no tiene una cuenta, registrece.</a>
+                <a class="usuario__links" href="register.php">Si no tiene una cuenta, registrese.</a>
             </div>
         </div>
     </body>
